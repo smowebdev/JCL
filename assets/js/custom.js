@@ -204,12 +204,6 @@ $(function () {
      * phía trên Home Hero.
      */
 
-    if (scrollY < firstHeroTop) {
-      $timelineYear.removeClass("is-fixed is-stop").css("top", "");
-
-      timelineYearFixed = false;
-    }
-
     /*
      * Không reset timeline khi scroll xuống
      * qua đáy hero cuối.
