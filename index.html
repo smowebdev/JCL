@@ -64,16 +64,21 @@
     <main>
         <section class="home-hero relative  text-white">
 
-            <div
-                class="timeline fixed top-0 left-0 md:left-[31px] w-1/2 md:w-[170px] h-screen pointer-events-none z-30">
+            <div class="timeline absolute top-0 left-0 md:left-[31px]
+    w-1/2 md:w-[170px]
+    h-full
+    pointer-events-none
+    z-30">
+                <div class="timeline__sticky sticky top-0 w-full h-dvh">
 
-                <div class="timeline__line absolute top-0 right-0 w-px h-full bg-grey"></div>
+                    <div class="timeline__line absolute top-0 right-0 w-px h-full bg-grey"></div>
 
-                <div
-                    class="timeline__year will-change-transform absolute left-3.5 md:left-0 top-18  md:top-20.5 lg:top-22 leading-[0.75] font-abel text-[160px] tracking-[-0.03em]">
-                    20
+                    <div
+                        class="timeline__year   top-6 absolute font-abel text-[160px] leading-[0.75] tracking-[-0.03em]">
+                        20
+                    </div>
+
                 </div>
-
             </div>
 
             <div class="relative z-20">
