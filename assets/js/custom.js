@@ -1,77 +1,94 @@
 $(function () {
+  $(".menu-toggle").on("click", function (e) {
+    e.stopPropagation();
+
+    $(this).toggleClass("active");
+    $(".menu-mobile").toggleClass("active");
+  });
+
+  $(".menu-mobile").on("click", function (e) {
+    e.stopPropagation();
+  });
+
+  $(document).on("click", function () {
+    $(".menu-toggle").removeClass("active");
+    $(".menu-mobile").removeClass("active");
+  });
+
+  $(".menu-mobile a").on("click", function () {
+    $(".menu-toggle").removeClass("active");
+    $(".menu-mobile").removeClass("active");
+  });
+
   // =========================================================
-  // Timeline Home Hero - Start
+  // Timeline Home Hero
   // =========================================================
 
+  const $homeHero = $(".home-hero");
+  const $heroInner = $(".home-hero-inner");
   const $floatingItems = $(".hero-side__floating");
   const $timelineYear = $(".timeline__year");
   const $heroItems = $(".hero-item");
+  const $heroScroll = $(".home-hero__scroll");
 
-  if (!$floatingItems.length || !$timelineYear.length || !$heroItems.length) {
+  if (
+    !$homeHero.length ||
+    !$heroInner.length ||
+    !$floatingItems.length ||
+    !$timelineYear.length ||
+    !$heroItems.length
+  ) {
     return;
   }
 
-  // =========================================================
-  // SETTINGS
-  // =========================================================
-
   const isMobile = window.matchMedia("(max-width: 767px)").matches;
 
-  const STOP_OFFSET = isMobile ? 30 : 40;
+  const STOP_OFFSET = 10;
 
-  /*
-   * Timeline year chỉ được add is-fixed
-   * một lần khi bắt đầu scroll vào hero.
-   *
-   * Sau đó giữ nguyên is-fixed xuyên suốt
-   * các hero-item.
-   */
   let timelineYearFixed = false;
 
-  // =========================================================
-  // UPDATE
-  // =========================================================
+  function getTimelineEarlyOffset() {
+    return $heroScroll.length ? $heroScroll.outerHeight() : 0;
+  }
 
   function update() {
-    const scrollY = $(window).scrollTop();
-
-    // =======================================================
-    // FIRST / LAST HERO
-    // =======================================================
+    const scrollY = $heroInner.scrollTop();
 
     const $firstHero = $heroItems.first();
     const $lastHero = $heroItems.last();
 
+    if (!$firstHero.length || !$lastHero.length) {
+      return;
+    }
+
     const firstHeroTop = $firstHero[0].offsetTop;
 
     const lastHeroTop = $lastHero[0].offsetTop;
-
     const lastHeroHeight = $lastHero.outerHeight();
 
     const lastHeroBottom = lastHeroTop + lastHeroHeight;
 
-    // =======================================================
-    // FLOATING ITEMS
-    // =======================================================
+    const TIMELINE_EARLY_OFFSET = getTimelineEarlyOffset();
+
+    const timelineStart = lastHeroTop - TIMELINE_EARLY_OFFSET;
+
+    if (scrollY < firstHeroTop) {
+      $timelineYear.removeClass("is-fixed is-stop").css("top", "");
+
+      timelineYearFixed = false;
+    }
 
     $floatingItems.each(function () {
-      const floating = this;
-      const $floating = $(floating);
+      const $floating = $(this);
 
       const $hero = $floating.closest(".hero-item");
-
       const $main = $hero.find(".hero-main").first();
 
       if (!$hero.length || !$main.length) {
         return;
       }
 
-      // =====================================================
-      // HERO DIMENSIONS
-      // =====================================================
-
       const heroTop = $hero[0].offsetTop;
-
       const heroHeight = $hero.outerHeight();
 
       const heroBottom = heroTop + heroHeight;
@@ -80,91 +97,30 @@ $(function () {
 
       const mainTop = heroTop + $main[0].offsetTop;
 
-      /*
-       * Điểm floating chạm vùng hero-main
-       */
       const stopPoint = mainTop - floatingHeight - STOP_OFFSET;
 
-      // =====================================================
-      // RESET FLOATING
-      // =====================================================
+      const isLastHero = $hero[0] === $lastHero[0];
 
-      $floating.removeClass("is-fixed is-stop").css("top", "");
-
-      // =====================================================
-      // HERO CHƯA TỚI
-      // =====================================================
+      if (!isLastHero) {
+        $floating.removeClass("is-fixed is-stop").css("top", "");
+      }
 
       if (scrollY < heroTop) {
         return;
       }
 
-      // =====================================================
-      // CHECK HERO CUỐI
-      // =====================================================
-
-      const isLastHero = $hero[0] === $lastHero[0];
-
-      // =====================================================
-      // HERO CUỐI CÙNG
-      // =====================================================
-
       if (isLastHero) {
-        /*
-         * -----------------------------------------------
-         * FLOATING
-         * -----------------------------------------------
-         *
-         * is-fixed
-         *     ↓
-         * remove
-         *     ↓
-         * is-stop
-         */
-
-        $floating.removeClass("is-fixed").addClass("is-stop");
-
-        /*
-         * -----------------------------------------------
-         * TIMELINE YEAR
-         * -----------------------------------------------
-         *
-         * is-fixed
-         *     ↓
-         * remove
-         *     ↓
-         * is-stop
-         */
-
-        $timelineYear.removeClass("is-fixed").addClass("is-stop");
-
-        timelineYearFixed = false;
-
-        /*
-         * Floating vẫn dừng tại hero-main.
-         */
-
         return;
       }
-
-      // =====================================================
-      // HERO BÌNH THƯỜNG
-      // =====================================================
-
-      // =====================================================
-      // FLOATING → FIXED
-      // =====================================================
 
       if (scrollY >= heroTop && scrollY < stopPoint) {
         $floating.addClass("is-fixed");
 
-        /*
-         * Timeline year chỉ add is-fixed
-         * lần đầu tiên.
-         */
-
         if (!timelineYearFixed) {
-          $timelineYear.removeClass("is-stop").addClass("is-fixed");
+          $timelineYear
+            .removeClass("is-stop")
+            .addClass("is-fixed")
+            .css("top", "");
 
           timelineYearFixed = true;
         }
@@ -172,81 +128,69 @@ $(function () {
         return;
       }
 
-      // =====================================================
-      // FLOATING → STOP
-      // =====================================================
-
       if (scrollY >= stopPoint && scrollY <= heroBottom) {
         $floating
           .addClass("is-stop")
           .css("top", $main[0].offsetTop - floatingHeight - STOP_OFFSET + "px");
 
-        /*
-         * QUAN TRỌNG:
-         *
-         * Không remove is-fixed của timeline year.
-         *
-         * Timeline year vẫn:
-         *
-         * .is-fixed
-         */
-
         return;
       }
     });
 
-    // =======================================================
-    // RESET TIMELINE KHI SCROLL RA KHỎI HOME HERO
-    // =======================================================
+    if (scrollY >= timelineStart && scrollY <= lastHeroBottom) {
+      const $lastFloating = $lastHero.find(".hero-side__floating").first();
 
-    /*
-     * Chỉ reset khi scroll ngược lên
-     * phía trên Home Hero.
-     */
+      if ($lastFloating.length) {
+        const lastFloatingTop = lastHeroTop + $lastFloating[0].offsetTop;
 
-    /*
-     * Không reset timeline khi scroll xuống
-     * qua đáy hero cuối.
-     *
-     * Hero cuối đã tự chuyển:
-     *
-     * is-fixed → is-stop
-     */
+        $timelineYear
+          .removeClass("is-fixed is-stop")
+          .css("top", lastFloatingTop + "px");
+
+        timelineYearFixed = false;
+      }
+    }
+
+    if (scrollY < timelineStart && scrollY >= firstHeroTop) {
+      $timelineYear.css("top", "").removeClass("is-stop").addClass("is-fixed");
+
+      timelineYearFixed = true;
+    }
+
+    if (scrollY > lastHeroBottom) {
+      const $lastFloating = $lastHero.find(".hero-side__floating").first();
+
+      if ($lastFloating.length) {
+        const lastFloatingTop = lastHeroTop + $lastFloating[0].offsetTop;
+
+        $timelineYear
+          .removeClass("is-fixed is-stop")
+          .css("top", lastFloatingTop + "px");
+      }
+
+      timelineYearFixed = false;
+    }
   }
-
-  // =========================================================
-  // SCROLL
-  // =========================================================
 
   let ticking = false;
 
-  $(window).on("scroll", function () {
-    if (!ticking) {
-      window.requestAnimationFrame(function () {
-        update();
-
-        ticking = false;
-      });
-
-      ticking = true;
+  $heroInner.on("scroll", function () {
+    if (ticking) {
+      return;
     }
-  });
 
-  // =========================================================
-  // RESIZE
-  // =========================================================
+    ticking = true;
+
+    window.requestAnimationFrame(function () {
+      update();
+
+      ticking = false;
+    });
+  });
 
   $(window).on("resize", function () {
     update();
   });
 
-  // =========================================================
-  // INITIAL
-  // =========================================================
-
   update();
-
-  // =========================================================
-  // Timeline Home Hero - End
-  // =========================================================
 });

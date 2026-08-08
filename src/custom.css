@@ -94,12 +94,13 @@ a {
 }
 
 .timeline__year {
-    left: 31px;
+    left: 0;
 }
 
 .timeline__year.is-fixed {
     position: fixed;
     top: 88px;
+    left: 31px;
 }
 
 
@@ -133,9 +134,7 @@ a {
     .timeline__year.is-stop,
     .timeline__year.is-fixed {
         top: 72px;
-    }
-
-    .timeline__year.is-stop {
         left: 14px;
     }
+
 }
