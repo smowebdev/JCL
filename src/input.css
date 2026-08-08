@@ -1,16 +1,90 @@
 @import "tailwindcss";
 
 @theme {
+    /* Colors */
     --color-primary: #57585A;
-    --color-grey: #D9D9D9;
+    --color-secondary: #B7AE9B;
     --color-tertiary: #880015;
+    --color-grey: #D9D9D9;
 
+    /* Fonts */
     --font-inter: "Inter", sans-serif;
     --font-abel: "Abel", sans-serif;
 
+    /* Spacing */
+    --spacing-page-x: 50px;
+    --spacing-section-y-s: 50px;
+    --spacing-section-y-l: 150px;
+
+    --spacing-100: 100px;
+    --spacing-80: 80px;
+    --spacing-heading-height: 64px;
+
+    /* Gap */
+    --spacing-xxxl: 56px;
+    --spacing-xxl: 48px;
+    --spacing-xl: 36px;
+    --spacing-l: 30px;
+    --spacing-m: 20px;
+    --spacing-s: 16px;
+
+    /* Typography */
+    --text-h1: 50px;
+    --text-title-l: 22px;
+    --text-title-m: 18px;
+    --text-p1: 16px;
+
+    --animate-arrow-move: arrow-move 1.2s ease-in-out infinite;
+
+    @keyframes arrow-move {
+
+        0%,
+        100% {
+            transform: translateX(0);
+        }
+
+        50% {
+            transform: translateX(8px);
+        }
+    }
+}
+
+@media (max-width: 1024px) {
+    :root {
+        --spacing-page-x: 35px;
+        --spacing-section-y-l: 100px;
+
+        --spacing-100: 50px;
+        --spacing-80: 40px;
+        --spacing-heading-height: 58px;
+
+        --spacing-xl: 30px;
+        --spacing-l: 20px;
+
+        --text-h1: 40px;
+        --text-title-l: 20px;
+        --text-title-m: 18px;
+        --text-p1: 16px;
+    }
+}
+
+@media (max-width: 767px) {
+    :root {
+        --spacing-page-x: 20px;
+        --spacing-section-y-l: 80px;
+
+        --spacing-heading-height: 48px;
+
+        --text-h1: 35px;
+        --text-title-l: 18px;
+        --text-title-m: 16px;
+        --text-p1: 14px;
+    }
 }
 
 @layer components {
+
+
     .btn {
         @apply inline-block py-[5px] px-[11px] md:px-[19px] md:py-[9px] text-[14px] md:text-[20px] lg:text-[22px] leading-[normal] border;
 
@@ -22,5 +96,9 @@
 
     .btn-secondary {
         @apply border-white bg-transparent text-white hover:bg-white hover:text-primary;
+    }
+
+    .transition-default {
+        @apply transition-all duration-300 ease-[ease];
     }
 }

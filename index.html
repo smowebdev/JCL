@@ -16,7 +16,7 @@
                 <img class="w-auto h-6 md:h-6.5 lg:h-8" src="assets/images/logo.svg" alt="">
             </a>
             <nav class="header-menu hidden md:block text-[16px] leading-4.75  md:mr-17.5 lg:mr-25">
-                <ul class="flex gap-5 lg:gap-7.5">
+                <ul class="flex gap-5 lg:gap-l">
                     <li><a href="#">Project</a></li>
                     <li><a href="#">People</a></li>
                     <li><a href="#">About Us</a></li>
@@ -36,19 +36,19 @@
         </div>
 
         <div class="menu-mobile px-5">
-            <div class="header-lang py-7.5 flex justify-center text-primary text-[20px]  leading-6  gap-6">
+            <div class="header-lang py-l flex justify-center text-primary text-[20px]  leading-6  gap-6">
                 <a href="#">简</a>
                 <a href="#">繁</a>
             </div>
             <nav class="flex-1 flex items-center text-center text-[30px] leading-9 justify-center">
-                <ul class="flex flex-col gap-7.5">
+                <ul class="flex flex-col gap-l">
                     <li><a href="#">Project</a></li>
                     <li><a href="#">People</a></li>
                     <li><a href="#">About Us</a></li>
                     <li><a href="#">Story</a></li>
                 </ul>
             </nav>
-            <div class="header-socials py-7.5 flex justify-center gap-6">
+            <div class="header-socials py-l flex justify-center gap-6">
                 <a href="#" target="_blank">
                     <img class="w-6 h-6 object-contain" src="assets/images/instagram-icon.svg" alt="">
                 </a>
@@ -65,14 +65,17 @@
         <section class="home-hero pb-[46px] overflow-hidden relative  text-white">
 
             <div class="
-        relative
-        home-hero-inner
-        overflow-y-auto
+    relative
+    home-hero-inner
+    overflow-y-auto
+    [scrollbar-width:none]
+    [-ms-overflow-style:none]
+    [&::-webkit-scrollbar]:hidden
 
-        h-[calc(100dvh-94px)]
-        md:h-[calc(100dvh-104px)]
-        lg:h-[calc(100dvh-110px)]
-        ">
+    h-[calc(100dvh-94px)]
+    md:h-[calc(100dvh-104px)]
+    lg:h-[calc(100dvh-110px)]
+">
                 <div class="timeline absolute top-0 left-0 md:left-[31px]
     w-1/2 md:w-[170px]
     h-full
@@ -138,7 +141,7 @@
 
 
                             <div
-                                class="hero-main pb-12.5 md:pr-12.5 flex flex-col lg:flex-row justify-between gap-7.5 items-start lg:items-end">
+                                class="hero-main pb-12.5 md:pr-12.5 flex flex-col lg:flex-row justify-between gap-l items-start lg:items-end">
 
                                 <h1
                                     class="hero-heading font-medium text-[25px] md:text-[32px] lg:text-[50px] tracking-[-0.01em] max-w-161">
@@ -204,7 +207,7 @@
 
 
                             <div
-                                class="hero-main pb-12.5 md:pr-12.5 flex flex-col lg:flex-row justify-between gap-7.5 items-start lg:items-end">
+                                class="hero-main pb-12.5 md:pr-12.5 flex flex-col lg:flex-row justify-between gap-l items-start lg:items-end">
 
                                 <h2
                                     class="hero-heading font-medium text-[25px] md:text-[32px] lg:text-[50px] tracking-[-0.01em] max-w-161">
@@ -271,7 +274,7 @@
 
 
                             <div
-                                class="hero-main pb-12.5 md:pr-12.5 flex flex-col lg:flex-row justify-between gap-7.5 items-start lg:items-end">
+                                class="hero-main pb-12.5 md:pr-12.5 flex flex-col lg:flex-row justify-between gap-l items-start lg:items-end">
 
                                 <h2
                                     class="hero-heading font-medium text-[25px] md:text-[32px] lg:text-[50px] tracking-[-0.01em] max-w-161">
@@ -296,10 +299,132 @@
 
                 </div>
             </div>
-            <div class="home-hero__scroll bg-red-100 h-[46px] w-full absolute bottom-0 left-0 z-40"></div>
+            <div class="home-hero__scroll bg-white w-full absolute bottom-0 left-0 z-40">
+                <div class="hero-scoll-btn cursor-pointer px-5 py-4 flex items-center justify-center">
+                    <img class="w-auto h-3.5 object-contain" src="assets/images/arrow-down.svg" alt="">
+                </div>
+            </div>
 
         </section>
-        <section class="h-[1000px]"></section>
+        <section class="project-cate-sec px-5 md:px-8.75 lg:px-80 py-section-y-l">
+            <div class="project-cate-list grid md:grid-cols-2 lg:grid-cols-3 gap-x-l gap-y-12 p-xxl">
+                <!-- Type 1 -->
+                <a href="#" class="cate-item group relative min-h-[255px] flex items-end justify-end">
+                    <div class="w-[300px] h-[200px]  relative">
+                        <div
+                            class="overlay absolute inset-0 bg-black/57 pointer-events-none transition-default opacity-0 group-hover:opacity-100">
+                        </div>
+                        <img class="w-full h-full object-cover" src="assets/images/Urban-Study-Image.png" alt="">
+                        <div
+                            class="absolute text-[12px] leading-[normal] font-light text-white inline-flex items-center justify-center w-full gap-1.5 top-1/2 -translate-y-1/2 transition-default opacity-0 group-hover:opacity-100">
+                            <span>See More</span>
+                            <img src="assets/images/arrow-right-white.svg" alt="">
+                        </div>
+                    </div>
+                    <div
+                        class=" absolute top-8 left-8.5 inline-block text-title-l leading-[normal] py-2 px-5.5 border border-primary bg-white ">
+                        Urban Study</div>
+                </a>
+                <!-- Type 2 -->
+                <a href="#" class="cate-item group relative min-h-[255px] flex items-center justify-center">
+                    <div class="w-[255px] h-[255px]  relative">
+                        <div
+                            class="overlay absolute inset-0 bg-black/57 pointer-events-none transition-default opacity-0 group-hover:opacity-100">
+                        </div>
+                        <img class="w-full h-full object-cover" src="assets/images/Architecture-Image.png" alt="">
+                        <div
+                            class="absolute text-[12px] leading-[normal] font-light text-white inline-flex items-center justify-center w-full gap-1.5 top-1/2 -translate-y-1/2 transition-default opacity-0 group-hover:opacity-100">
+                            <span>See More</span>
+                            <img src="assets/images/arrow-right-white.svg" alt="">
+                        </div>
+                    </div>
+                    <div
+                        class=" absolute -top-5.5 left-5 inline-block text-title-l leading-[normal] py-2 px-5.5 border border-primary bg-white ">
+                        Architecture</div>
+                </a>
+                <!-- Type 3 -->
+                <a href="#" class="cate-item group relative min-h-[255px] flex items-center justify-start">
+                    <div class="w-[330px] h-[220px]  relative">
+                        <div
+                            class="overlay absolute inset-0 bg-black/57 pointer-events-none transition-default opacity-0 group-hover:opacity-100">
+                        </div>
+                        <img class="w-full h-full object-cover" src="assets/images/Heritage-Image.png" alt="">
+                        <div
+                            class="absolute text-[12px] leading-[normal] font-light text-white inline-flex items-center justify-center w-full gap-1.5 top-1/2 -translate-y-1/2 transition-default opacity-0 group-hover:opacity-100">
+                            <span>See More</span>
+                            <img src="assets/images/arrow-right-white.svg" alt="">
+                        </div>
+                    </div>
+                    <div
+                        class=" absolute -bottom-1 -left-10 inline-block text-title-l leading-[normal] py-2 px-5.5 border border-primary bg-white ">
+                        Heritage</div>
+                </a>
+                <!-- Type 4 -->
+                <a href="#" class="cate-item group relative min-h-[270px] flex items-center justify-center">
+                    <div class="w-[200px] h-[200px]  relative">
+                        <div
+                            class="overlay absolute inset-0 bg-black/57 pointer-events-none transition-default opacity-0 group-hover:opacity-100">
+                        </div>
+                        <img class="w-full h-full object-cover" src="assets/images/Landscape-Image.png" alt="">
+                        <div
+                            class="absolute text-[12px] leading-[normal] font-light text-white inline-flex items-center justify-center w-full gap-1.5 top-1/2 -translate-y-1/2 transition-default opacity-0 group-hover:opacity-100">
+                            <span>See More</span>
+                            <img src="assets/images/arrow-right-white.svg" alt="">
+                        </div>
+                    </div>
+                    <div
+                        class=" absolute bottom-3 right-11 inline-block text-title-l leading-[normal] py-2 px-5.5 border border-primary bg-white ">
+                        Landscape</div>
+                </a>
+                <!-- Type 5 -->
+                <a href="#" class="cate-item group relative min-h-[270px] flex items-center justify-center">
+                    <div class="w-[313px] h-[176px]  relative">
+                        <div
+                            class="overlay absolute inset-0 bg-black/57 pointer-events-none transition-default opacity-0 group-hover:opacity-100">
+                        </div>
+                        <img class="w-full h-full object-cover" src="assets/images/Interior-Image.png" alt="">
+                        <div
+                            class="absolute text-[12px] leading-[normal] font-light text-white inline-flex items-center justify-center w-full gap-1.5 top-1/2 -translate-y-1/2 transition-default opacity-0 group-hover:opacity-100">
+                            <span>See More</span>
+                            <img src="assets/images/arrow-right-white.svg" alt="">
+                        </div>
+                    </div>
+                    <div
+                        class=" absolute top-6 -left-2.5 inline-block text-title-l leading-[normal] py-2 px-5.5 border border-primary bg-white ">
+                        Interior</div>
+                </a>
+                <a href="#" class="cate-item group relative min-h-[270px] flex items-center justify-center">
+                    <div class="w-[180px] h-[270px]  relative">
+                        <div
+                            class="overlay absolute inset-0 bg-black/57 pointer-events-none transition-default opacity-0 group-hover:opacity-100">
+                        </div>
+                        <img class="w-full h-full object-cover" src="assets/images/Green-Image.png" alt="">
+                        <div
+                            class="absolute text-[12px] leading-[normal] font-light text-white inline-flex items-center justify-center w-full gap-1.5 top-1/2 -translate-y-1/2 transition-default opacity-0 group-hover:opacity-100">
+                            <span>See More</span>
+                            <img src="assets/images/arrow-right-white.svg" alt="">
+                        </div>
+                    </div>
+                    <div
+                        class=" absolute -bottom-5.5 right-13.5 inline-block text-title-l leading-[normal] py-2 px-5.5 border border-primary bg-white ">
+                        Green</div>
+                </a>
+            </div>
+            <div class="text-center mt-7.5">
+                <a href="#"
+                    class="inline-flex text-center text-primary text-title-l leading-[normal] gap-4 hover:text-tertiary">
+                    <svg class="animate-arrow-move" width="33" height="27" viewBox="0 0 33 27" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path d="M30.6438 12.2637L30.6438 13.8765L-1.40998e-07 13.8765L0 12.2637L30.6438 12.2637Z"
+                            fill="currentColor" />
+                        <path
+                            d="M32.2782 13.1151L19.1631 26.2302L18.0226 25.0898L29.9973 13.1151L18.0226 1.14044L19.1631 0L32.2782 13.1151Z"
+                            fill="currentColor" />
+                    </svg>
+                    <span>See our projects</span>
+                </a>
+            </div>
+        </section>
     </main>
 
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
