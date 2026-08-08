@@ -1,4 +1,5 @@
 $(function () {
+  // Toggle Menu  - Start
   $(".menu-toggle").on("click", function (e) {
     e.stopPropagation();
 
@@ -20,6 +21,10 @@ $(function () {
     $(".menu-mobile").removeClass("active");
   });
 
+  // Toggle Menu  - End
+
+  // Hero Scroll Button - Start
+
   $(".hero-scroll-btn").on("click", function () {
     const $nextSection = $(".home-hero").next("section");
 
@@ -35,6 +40,8 @@ $(function () {
       "swing",
     );
   });
+  // Hero Scroll Button - End
+
   // =========================================================
   // Timeline Home Hero - GSAP
   // =========================================================
@@ -195,4 +202,59 @@ $(function () {
   });
 
   calculate();
+  // Home Hero Timeline - End
+
+  // Counter Animation - Start
+  const $counters = $(".js-counter");
+
+  if (!$counters.length) return;
+
+  function animateCounter($counter) {
+    const target = parseInt($counter.data("count"), 10);
+
+    if (isNaN(target)) return;
+
+    const duration = 1200;
+    const startTime = performance.now();
+
+    function update(currentTime) {
+      const progress = Math.min((currentTime - startTime) / duration, 1);
+
+      const ease = 1 - Math.pow(1 - progress, 3);
+
+      const value = Math.floor(target * ease);
+
+      $counter.text(value);
+
+      if (progress < 1) {
+        requestAnimationFrame(update);
+      } else {
+        $counter.text(target);
+      }
+    }
+
+    requestAnimationFrame(update);
+  }
+
+  const observer = new IntersectionObserver(
+    function (entries, observer) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+
+        const $counter = $(entry.target);
+
+        animateCounter($counter);
+
+        observer.unobserve(entry.target);
+      });
+    },
+    {
+      threshold: 0.5,
+    },
+  );
+
+  $counters.each(function () {
+    observer.observe(this);
+  });
+  // Counter Animation - End
 });
