@@ -20,177 +20,179 @@ $(function () {
     $(".menu-mobile").removeClass("active");
   });
 
+  $(".hero-scroll-btn").on("click", function () {
+    const $nextSection = $(".home-hero").next("section");
+
+    if (!$nextSection.length) {
+      return;
+    }
+
+    $("html, body").animate(
+      {
+        scrollTop: $nextSection.offset().top,
+      },
+      700,
+      "swing",
+    );
+  });
   // =========================================================
-  // Timeline Home Hero
+  // Timeline Home Hero - GSAP
   // =========================================================
 
-  const $homeHero = $(".home-hero");
-  const $heroInner = $(".home-hero-inner");
-  const $floatingItems = $(".hero-side__floating");
+  const $hero = $(".home-hero");
+  const $inner = $(".home-hero-inner");
   const $timelineYear = $(".timeline__year");
   const $heroItems = $(".hero-item");
-  const $heroScroll = $(".home-hero__scroll");
 
   if (
-    !$homeHero.length ||
-    !$heroInner.length ||
-    !$floatingItems.length ||
+    !$hero.length ||
+    !$inner.length ||
     !$timelineYear.length ||
     !$heroItems.length
   ) {
     return;
   }
 
-  const isMobile = window.matchMedia("(max-width: 767px)").matches;
+  if (typeof gsap === "undefined") {
+    console.warn("GSAP is required.");
+    return;
+  }
 
   const STOP_OFFSET = 10;
 
-  let timelineYearFixed = false;
+  const inner = $inner[0];
+  const timelineYear = $timelineYear[0];
 
-  function getTimelineEarlyOffset() {
-    return $heroScroll.length ? $heroScroll.outerHeight() : 0;
-  }
+  const heroItems = $heroItems.toArray();
 
-  function update() {
-    const scrollY = $heroInner.scrollTop();
+  const floatingData = [];
 
-    const $firstHero = $heroItems.first();
-    const $lastHero = $heroItems.last();
+  heroItems.forEach((hero) => {
+    const floating = hero.querySelector(".hero-side__floating");
+    const main = hero.querySelector(".hero-main");
 
-    if (!$firstHero.length || !$lastHero.length) {
+    if (!floating || !main) {
       return;
     }
 
-    const firstHeroTop = $firstHero[0].offsetTop;
+    floatingData.push({
+      hero,
+      floating,
+      main,
+    });
+  });
 
-    const lastHeroTop = $lastHero[0].offsetTop;
-    const lastHeroHeight = $lastHero.outerHeight();
+  function calculate() {
+    const scrollY = inner.scrollTop;
 
-    const lastHeroBottom = lastHeroTop + lastHeroHeight;
-
-    const TIMELINE_EARLY_OFFSET = getTimelineEarlyOffset();
-
-    const timelineStart = lastHeroTop - TIMELINE_EARLY_OFFSET;
-
-    if (scrollY < firstHeroTop) {
-      $timelineYear.removeClass("is-fixed is-stop").css("top", "");
-
-      timelineYearFixed = false;
-    }
-
-    $floatingItems.each(function () {
-      const $floating = $(this);
-
-      const $hero = $floating.closest(".hero-item");
-      const $main = $hero.find(".hero-main").first();
-
-      if (!$hero.length || !$main.length) {
-        return;
-      }
-
-      const heroTop = $hero[0].offsetTop;
-      const heroHeight = $hero.outerHeight();
-
-      const heroBottom = heroTop + heroHeight;
-
-      const floatingHeight = $floating.outerHeight();
-
-      const mainTop = heroTop + $main[0].offsetTop;
-
-      const stopPoint = mainTop - floatingHeight - STOP_OFFSET;
-
-      const isLastHero = $hero[0] === $lastHero[0];
-
-      if (!isLastHero) {
-        $floating.removeClass("is-fixed is-stop").css("top", "");
-      }
-
-      if (scrollY < heroTop) {
-        return;
-      }
-
-      if (isLastHero) {
-        return;
-      }
-
-      if (scrollY >= heroTop && scrollY < stopPoint) {
-        $floating.addClass("is-fixed");
-
-        if (!timelineYearFixed) {
-          $timelineYear
-            .removeClass("is-stop")
-            .addClass("is-fixed")
-            .css("top", "");
-
-          timelineYearFixed = true;
-        }
-
-        return;
-      }
-
-      if (scrollY >= stopPoint && scrollY <= heroBottom) {
-        $floating
-          .addClass("is-stop")
-          .css("top", $main[0].offsetTop - floatingHeight - STOP_OFFSET + "px");
-
-        return;
-      }
+    gsap.set(timelineYear, {
+      y: scrollY,
     });
 
-    if (scrollY >= timelineStart && scrollY <= lastHeroBottom) {
-      const $lastFloating = $lastHero.find(".hero-side__floating").first();
+    floatingData.forEach((item) => {
+      const { hero, floating, main } = item;
 
-      if ($lastFloating.length) {
-        const lastFloatingTop = lastHeroTop + $lastFloating[0].offsetTop;
+      const heroTop = hero.offsetTop;
+      const heroHeight = hero.offsetHeight;
+      const heroBottom = heroTop + heroHeight;
 
-        $timelineYear
-          .removeClass("is-fixed is-stop")
-          .css("top", lastFloatingTop + "px");
+      const floatingHeight = floating.offsetHeight;
+      const floatingOriginalTop = floating.offsetTop;
 
-        timelineYearFixed = false;
-      }
-    }
+      const mainTop = main.offsetTop;
 
-    if (scrollY < timelineStart && scrollY >= firstHeroTop) {
-      $timelineYear.css("top", "").removeClass("is-stop").addClass("is-fixed");
+      const stopTop = mainTop - floatingHeight - STOP_OFFSET;
 
-      timelineYearFixed = true;
-    }
+      const maxMove = Math.max(0, stopTop - floatingOriginalTop);
 
-    if (scrollY > lastHeroBottom) {
-      const $lastFloating = $lastHero.find(".hero-side__floating").first();
+      if (scrollY <= heroTop) {
+        gsap.set(floating, {
+          y: 0,
+        });
 
-      if ($lastFloating.length) {
-        const lastFloatingTop = lastHeroTop + $lastFloating[0].offsetTop;
-
-        $timelineYear
-          .removeClass("is-fixed is-stop")
-          .css("top", lastFloatingTop + "px");
+        return;
       }
 
-      timelineYearFixed = false;
-    }
+      if (scrollY >= heroBottom) {
+        gsap.set(floating, {
+          y: maxMove,
+        });
+
+        return;
+      }
+      const scrollInsideHero = scrollY - heroTop;
+
+      const movement = Math.min(Math.max(scrollInsideHero, 0), maxMove);
+
+      gsap.set(floating, {
+        y: movement,
+      });
+    });
   }
 
   let ticking = false;
 
-  $heroInner.on("scroll", function () {
+  function requestUpdate() {
     if (ticking) {
       return;
     }
 
     ticking = true;
 
-    window.requestAnimationFrame(function () {
-      update();
+    requestAnimationFrame(() => {
+      calculate();
 
       ticking = false;
     });
+  }
+
+  $inner.on("scroll", function () {
+    requestUpdate();
   });
+
+  $inner.on("wheel", function (event) {
+    const deltaY = event.originalEvent.deltaY;
+
+    const maxScroll = inner.scrollHeight - inner.clientHeight;
+
+    const scrollY = inner.scrollTop;
+
+    const atTop = scrollY <= 0;
+
+    const atBottom = scrollY >= maxScroll - 1;
+
+    if (deltaY > 0 && atBottom) {
+      event.preventDefault();
+
+      window.scrollBy({
+        top: deltaY,
+        behavior: "auto",
+      });
+
+      return;
+    }
+
+    if (deltaY < 0 && atTop) {
+      event.preventDefault();
+
+      window.scrollBy({
+        top: deltaY,
+        behavior: "auto",
+      });
+
+      return;
+    }
+  });
+
+  let resizeTimer;
 
   $(window).on("resize", function () {
-    update();
+    clearTimeout(resizeTimer);
+
+    resizeTimer = setTimeout(() => {
+      calculate();
+    }, 100);
   });
 
-  update();
+  calculate();
 });

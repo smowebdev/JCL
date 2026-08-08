@@ -87,54 +87,10 @@ a {
 }
 
 
-.hero-side__floating.is-fixed {
-    position: fixed;
-    top: 88px;
-    left: 217px;
-}
-
-.timeline__year {
-    left: 0;
-}
-
-.timeline__year.is-fixed {
-    position: fixed;
-    top: 88px;
-    left: 31px;
-}
 
 
 
-.timeline__year.is-stop {
-    top: 88px;
-    left: 0;
-}
-
-@media(max-width:1024px) {
-
-    .hero-side__floating.is-fixed,
-    .timeline__year.is-stop,
-    .timeline__year.is-fixed {
-        top: 82px;
-    }
-}
+@media(max-width:1024px) {}
 
 
-@media(max-width:767px) {
-    .hero-side__floating.is-fixed {
-        top: 72px;
-        left: auto;
-        right: 20px;
-    }
-
-    .timeline__year {
-        left: 14px;
-    }
-
-    .timeline__year.is-stop,
-    .timeline__year.is-fixed {
-        top: 72px;
-        left: 14px;
-    }
-
-}
+@media(max-width:767px) {}

@@ -91,11 +91,11 @@
     }
 
     .btn-primary {
-        @apply bg-white text-primary;
+        @apply bg-white text-primary hover:bg-grey hover:text-tertiary;
     }
 
     .btn-secondary {
-        @apply border-white bg-transparent text-white hover:bg-white hover:text-primary;
+        @apply border-white bg-transparent text-white hover:bg-grey hover:text-tertiary;
     }
 
     .transition-default {
