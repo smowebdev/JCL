@@ -264,6 +264,9 @@
   .h-6 {
     height: calc(var(--spacing) * 6);
   }
+  .h-\[calc\(100dvh-48px\)\] {
+    height: calc(100dvh - 48px);
+  }
   .h-\[calc\(100vh-48px\)\] {
     height: calc(100vh - 48px);
   }
@@ -275,6 +278,9 @@
   }
   .h-screen {
     height: 100vh;
+  }
+  .min-h-\[calc\(100dvh-48px\)\] {
+    min-height: calc(100dvh - 48px);
   }
   .min-h-\[calc\(100vh-48px\)\] {
     min-height: calc(100vh - 48px);
@@ -541,8 +547,14 @@
     .md\:h-6\.5 {
       height: calc(var(--spacing) * 6.5);
     }
+    .md\:h-\[calc\(100dvh-58px\)\] {
+      height: calc(100dvh - 58px);
+    }
     .md\:h-\[calc\(100vh-58px\)\] {
       height: calc(100vh - 58px);
+    }
+    .md\:min-h-\[calc\(100dvh-58px\)\] {
+      min-height: calc(100dvh - 58px);
     }
     .md\:min-h-\[calc\(100vh-58px\)\] {
       min-height: calc(100vh - 58px);
@@ -594,8 +606,14 @@
     .lg\:h-8 {
       height: calc(var(--spacing) * 8);
     }
+    .lg\:h-\[calc\(100dvh-64px\)\] {
+      height: calc(100dvh - 64px);
+    }
     .lg\:h-\[calc\(100vh-64px\)\] {
       height: calc(100vh - 64px);
+    }
+    .lg\:min-h-\[calc\(100dvh-64px\)\] {
+      min-height: calc(100dvh - 64px);
     }
     .lg\:min-h-\[calc\(100vh-64px\)\] {
       min-height: calc(100vh - 64px);
