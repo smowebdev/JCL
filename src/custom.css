@@ -86,11 +86,44 @@ a {
     transform: rotate(-45deg);
 }
 
+.client-logo-marquee {
+    animation: clientLogoMarquee 30s linear infinite;
+}
+
+
+.client-logo-marquee:hover {
+    animation-play-state: paused;
+}
+
+@keyframes clientLogoMarquee {
+    from {
+        transform: translate3d(0, 0, 0);
+    }
+
+    to {
+        transform: translate3d(-50%, 0, 0);
+    }
+}
 
 
 
+@media(max-width:1023px) {
+    .client-logo-marquee {
+        animation: none;
+        transform: none;
+        width: 100%;
+    }
 
-@media(max-width:1024px) {}
+    .client-logo-track {
+        width: 100%;
+    }
+
+    .client-logo-track-clone {
+        display: none;
+    }
+
+
+}
 
 
 @media(max-width:767px) {}
