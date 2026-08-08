@@ -95,7 +95,7 @@
     }
 
     .btn-secondary {
-        @apply border-white bg-transparent text-white hover:bg-grey hover:text-tertiary;
+        @apply border-white bg-transparent text-white hover:bg-grey hover:text-tertiary hover:border-grey;
     }
 
     .transition-default {
