@@ -144,13 +144,6 @@ $(function () {
          * Floating vẫn dừng tại hero-main.
          */
 
-        if (scrollY >= stopPoint && scrollY <= heroBottom) {
-          $floating.css(
-            "top",
-            $main[0].offsetTop - floatingHeight - STOP_OFFSET + "px",
-          );
-        }
-
         return;
       }
 
