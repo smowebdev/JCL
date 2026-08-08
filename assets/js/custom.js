@@ -69,11 +69,11 @@ $(function () {
       }
 
       if (scrollY >= stopPoint && scrollY <= heroBottom) {
-        const stopOffset = isMobile ? 10 : STOP_OFFSET;
+        console.log(1);
 
         $floating
           .addClass("is-stop")
-          .css("top", $main[0].offsetTop - floatingHeight - stopOffset + "px");
+          .css("top", $main[0].offsetTop - floatingHeight - STOP_OFFSET + "px");
 
         return;
       }
