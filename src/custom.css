@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Abel&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
+
 body {
     font-family: "Inter", sans-serif;
     font-size: 16px;
@@ -11,6 +12,7 @@ body {
 a {
     transition: all 0.3s ease-in-out;
 }
+
 
 
 .header-site {
@@ -94,6 +96,50 @@ a {
 .client-logo-marquee:hover {
     animation-play-state: paused;
 }
+
+.booking-form {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+
+
+.booking-form__overlay {
+    opacity: 0;
+    transition: all 0.4s ease;
+}
+
+.booking-form__panel {
+    transform: translateX(100%);
+    transition: all 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.booking-form__close span:first-child {
+    transform: rotate(45deg);
+}
+
+.booking-form__close span:last-child {
+    transform: rotate(-45deg);
+}
+
+
+.booking-form.is-open {
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.booking-form.is-open .booking-form__overlay {
+    opacity: 1;
+}
+
+.booking-form.is-open .booking-form__panel {
+    transform: translateX(0);
+}
+
+
 
 @keyframes clientLogoMarquee {
     from {
