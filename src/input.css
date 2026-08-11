@@ -86,19 +86,20 @@
 
 
     .btn {
-        @apply inline-block py-[5px] px-[11px] md:px-[19px] md:py-[9px] text-[14px] md:text-[20px] lg:text-[22px] leading-[normal] border;
+        @apply inline-block px-[19px] py-[9.5px] text-title-l leading-[normal] border;
 
     }
 
     .btn-primary {
-        @apply bg-white text-primary hover:bg-grey hover:text-tertiary;
+        @apply bg-white border-white text-primary hover:bg-grey hover:border-grey hover:text-tertiary;
     }
 
     .btn-secondary {
         @apply border-white bg-transparent text-white hover:bg-grey hover:text-tertiary hover:border-grey;
     }
+
     .btn-default {
-        @apply border-primary bg-transparent text-primary hover:bg-white hover:border-white;
+        @apply border-primary bg-transparent text-primary hover:bg-grey hover:border-grey hover:text-tertiary;
     }
 
     .transition-default {

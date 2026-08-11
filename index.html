@@ -5,6 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home | JCL</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://cdn.maptiler.com/maptiler-sdk-js/v4.1.0/maptiler-sdk.umd.min.js"></script>
+    <link href="https://cdn.maptiler.com/maptiler-sdk-js/v4.1.0/maptiler-sdk.css" rel="stylesheet" />
+    <script src="https://cdn.maptiler.com/leaflet-maptilersdk/v4.1.0/leaflet-maptilersdk.umd.min.js"></script>
     <link rel="stylesheet" href="./src/output.css">
     <link rel="stylesheet" href="./src/custom.css">
 </head>
@@ -18,16 +23,16 @@
             </a>
             <nav class="header-menu hidden md:block text-[16px] leading-4.75  md:mr-17.5 lg:mr-25">
                 <ul class="flex gap-5 lg:gap-l">
-                    <li><a href="#">Project</a></li>
-                    <li><a href="#">People</a></li>
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Story</a></li>
+                    <li><a href="project.html">Project</a></li>
+                    <li><a href="people.html">People</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="idea.html">Idea</a></li>
                 </ul>
             </nav>
-            <div class="header-lang hidden md:flex text-[16px]  leading-4.75  gap-4">
-                <a href="#" class="text-grey">简</a>
-                <a href="#" class="text-grey">繁</a>
-                <a href="#" class="text-primary">EN</a>
+            <div class="header-lang text-grey hidden md:flex text-[16px]  leading-4.75  gap-4">
+                <a href="#">简</a>
+                <a href="#">繁</a>
+                <a href="#" class="active">EN</a>
             </div>
             <div class="menu-toggle block md:hidden">
                 <span></span>
@@ -43,10 +48,10 @@
             </div>
             <nav class="flex-1 flex items-center text-center text-[30px] leading-9 justify-center">
                 <ul class="flex flex-col gap-l">
-                    <li><a href="#">Project</a></li>
-                    <li><a href="#">People</a></li>
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Story</a></li>
+                    <li><a href="project.html">Project</a></li>
+                    <li><a href="people.html">People</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="idea.html">Idea</a></li>
                 </ul>
             </nav>
             <div class="header-socials py-l flex justify-center gap-6">
@@ -56,14 +61,41 @@
                 <a href="#" target="_blank">
                     <img class="w-6 h-6 object-contain" src="assets/images/facebook-icon.svg" alt="">
                 </a>
-                <a href="#" target="_blank">
-                    <img class="w-6 h-6 object-contain" src="assets/images/wechat-icon.svg" alt="">
-                </a>
+                <div class="relative group js-wechat cursor-pointer">
+                    <button type="button" class="cursor-pointer js-wechat-trigger">
+                        <img class="w-6 h-6 object-contain" src="assets/images/wechat-icon.svg" alt="WeChat">
+                    </button>
+
+                    <div class="absolute left-1/2 bottom-full z-50 pb-2
+               hidden -translate-x-1/2
+               md:group-hover:block
+               js-wechat-qr">
+                        <img class="w-24 h-24 max-w-[unset] object-contain bg-white p-2 shadow-lg"
+                            src="assets/images/qr-img.png" alt="WeChat QR Code">
+                    </div>
+                </div>
             </div>
         </div>
     </header>
     <main>
         <section class="home-hero relative overflow-hidden text-white pb-[46px]">
+            <!-- Timeline navigation -->
+            <div
+                class="timeline__nav  absolute right-5 bottom-[66px] md:bottom-[76px] z-50  flex lg:hidden flex-col items-center gap-6">
+
+                <button type="button"
+                    class="timeline__btn timeline__btn--prev flex items-center justify-center  cursor-pointer"
+                    aria-label="Previous section">
+                    <img class="w-6" src="assets/images/arrow-hero.svg" alt="">
+                </button>
+
+                <button type="button"
+                    class="timeline__btn timeline__btn--next flex items-center justify-center  cursor-pointer"
+                    aria-label="Next section">
+                    <img class="w-6 rotate-180" src="assets/images/arrow-hero.svg" alt="">
+                </button>
+
+            </div>
             <div class="relative  home-hero-inner overflow-y-auto
     [scrollbar-width:none]
     [-ms-overflow-style:none]
@@ -82,6 +114,7 @@
                                 20
                             </div>
                         </div>
+
                     </div>
                     <div class="hero-item relative overflow-hidden
             h-[calc(100dvh-94px)]
@@ -123,7 +156,8 @@
                                     but Macau as a creative hub beyond architecture
                                 </h1>
 
-                                <a href="#" class="btn btn-secondary shrink-0">
+                                <a href="#"
+                                    class="btn btn-secondary shrink-0 text-[14px] md:text-title-l px-[11px] py-[5px] md:px-[19px] md:py-[9.5px] ">
                                     See More
                                 </a>
                             </div>
@@ -166,7 +200,8 @@
                                     with our compact urban fabric.
                                 </h2>
 
-                                <a href="#" class="btn btn-secondary shrink-0">
+                                <a href="#"
+                                    class="btn btn-secondary shrink-0 text-[14px] md:text-title-l px-[11px] py-[5px] md:px-[19px] md:py-[9.5px]">
                                     See More
                                 </a>
                             </div>
@@ -210,7 +245,8 @@
                                     Preserving Macau lays the path to success
                                 </h2>
 
-                                <a href="#" class="btn btn-secondary shrink-0">
+                                <a href="#"
+                                    class="btn btn-secondary shrink-0 text-[14px] md:text-title-l px-[11px] py-[5px] md:px-[19px] md:py-[9.5px]">
                                     See More
                                 </a>
                             </div>
@@ -500,9 +536,20 @@
                 <a href="#" target="_blank">
                     <img class="w-auto max-h-[24px] object-contain" src="assets/images/facebook-icon.svg" alt="">
                 </a>
-                <a href="#" target="_blank">
-                    <img class="w-auto max-h-[24px] object-contain" src="assets/images/wechat-icon.svg" alt="">
-                </a>
+
+                <div class="relative group js-wechat cursor-pointer">
+                    <button type="button" class="cursor-pointer js-wechat-trigger">
+                        <img class="w-auto max-h-[24px] object-contain" src="assets/images/wechat-icon.svg" alt="">
+                    </button>
+
+                    <div class="absolute left-1/2 bottom-full z-50 pb-2
+               hidden -translate-x-1/2
+               md:group-hover:block
+               js-wechat-qr">
+                        <img class="w-24 h-24 max-w-[unset] object-contain bg-white p-2 shadow-lg"
+                            src="assets/images/qr-img.png" alt="WeChat QR Code">
+                    </div>
+                </div>
             </div>
         </div>
     </footer>

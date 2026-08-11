@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Abel&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
+
 body {
     font-family: "Inter", sans-serif;
     font-size: 16px;
@@ -12,6 +13,13 @@ a {
     transition: all 0.3s ease-in-out;
 }
 
+.header-lang a:hover {
+    color: var(--color-primary);
+}
+
+.header-lang a.active {
+    color: var(--color-primary);
+}
 
 .header-site {
     z-index: 999;
@@ -94,6 +102,50 @@ a {
 .client-logo-marquee:hover {
     animation-play-state: paused;
 }
+
+.popup-form {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+
+
+.popup-form__overlay {
+    opacity: 0;
+    transition: all 0.4s ease;
+}
+
+.popup-form__panel {
+    transform: translateX(100%);
+    transition: all 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.popup-form__close span:first-child {
+    transform: rotate(45deg);
+}
+
+.popup-form__close span:last-child {
+    transform: rotate(-45deg);
+}
+
+
+.popup-form.is-open {
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.popup-form.is-open .popup-form__overlay {
+    opacity: 1;
+}
+
+.popup-form.is-open .popup-form__panel {
+    transform: translateX(0);
+}
+
+
 
 @keyframes clientLogoMarquee {
     from {

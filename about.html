@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | JCL</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://cdn.maptiler.com/maptiler-sdk-js/v4.1.0/maptiler-sdk.umd.min.js"></script>
+    <link href="https://cdn.maptiler.com/maptiler-sdk-js/v4.1.0/maptiler-sdk.css" rel="stylesheet" />
+    <script src="https://cdn.maptiler.com/leaflet-maptilersdk/v4.1.0/leaflet-maptilersdk.umd.min.js"></script>
+    <link rel="stylesheet" href="./src/output.css">
+    <link rel="stylesheet" href="./src/custom.css">
+</head>
+
+<body>
+    <header
+        class="header-site border-b border-black/10 bg-white px-page-x pt-3 pb-[11px] md:pt-4 md:pb-[15px] sticky top-0 left-0 w-full">
+        <div class="flex items-center justify-between gap-4">
+            <a href="#" class="block">
+                <img class="w-auto h-6 md:h-6.5 lg:h-8" src="assets/images/logo.svg" alt="">
+            </a>
+            <nav class="header-menu hidden md:block text-[16px] leading-4.75  md:mr-17.5 lg:mr-25">
+                <ul class="flex gap-5 lg:gap-l">
+                    <li><a href="project.html">Project</a></li>
+                    <li><a href="people.html">People</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="idea.html">Idea</a></li>
+                </ul>
+            </nav>
+            <div class="header-lang hidden md:flex text-[16px]  leading-4.75  gap-4">
+                <a href="#" class="text-grey">简</a>
+                <a href="#" class="text-grey">繁</a>
+                <a href="#" class="text-primary">EN</a>
+            </div>
+            <div class="menu-toggle block md:hidden">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+
+        <div class="menu-mobile px-5">
+            <div class="header-lang py-l flex justify-center text-primary text-[20px]  leading-6  gap-6">
+                <a href="#">简</a>
+                <a href="#">繁</a>
+            </div>
+            <nav class="flex-1 flex items-center text-center text-[30px] leading-9 justify-center">
+                <ul class="flex flex-col gap-l">
+                    <li><a href="project.html">Project</a></li>
+                    <li><a href="people.html">People</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="idea.html">Idea</a></li>
+                </ul>
+            </nav>
+            <div class="header-socials py-l flex justify-center gap-6">
+                <a href="#" target="_blank">
+                    <img class="w-6 h-6 object-contain" src="assets/images/instagram-icon.svg" alt="">
+                </a>
+                <a href="#" target="_blank">
+                    <img class="w-6 h-6 object-contain" src="assets/images/facebook-icon.svg" alt="">
+                </a>
+                <div class="relative group js-wechat cursor-pointer">
+                    <button type="button" class="cursor-pointer js-wechat-trigger">
+                        <img class="w-6 h-6 object-contain" src="assets/images/wechat-icon.svg" alt="WeChat">
+                    </button>
+
+                    <div class="absolute left-1/2 bottom-full z-50 pb-2
+               hidden -translate-x-1/2
+               md:group-hover:block
+               js-wechat-qr">
+                        <img class="w-24 h-24 max-w-[unset] object-contain bg-white p-2 shadow-lg"
+                            src="assets/images/qr-img.png" alt="WeChat QR Code">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main id="main">
+        <section
+            class="custom-banner about-banner text-white flex items-center justify-center p-page-x  relative overflow-hidden min-h-[calc(100dvh-48px)] md:min-h-[622px] lg:min-h-[calc(100dvh-64px)]"
+            style="background: url('assets/images/about-banner.jpg') no-repeat center / cover;">
+            <div class="banner-overlay absolute inset-0 z-0 bg-black/45 pointer-events-none"></div>
+            <div class="relative z-1">
+                <h1 class="mb-xl text-h1 tracking-[-0.01em] font-medium">From Macau,
+                    <br />To beyond.
+                </h1>
+                <div class="text-title-l leading-[22px] md:leading-[normal]">
+                    <p>Rooted in Macau's multicultural identity, we pair innovative thinking with advanced building
+                        technology — partnering with leading teams across China, Hong Kong, Europe, and North America to
+                        deliver sustainable design that best serves every client.</p>
+                </div>
+            </div>
+        </section>
+        <section class="about-services-sec px-page-x pt-section-y-s pb-section-y-l bg-secondary">
+            <h2 class="text-h1 tracking-[0.01em] font-medium mb-100">Our
+                <br />Service
+            </h2>
+            <div class="about-services-list lg:px-22.5 flex flex-wrap justify-center gap-5 lg:gap-l">
+                <div
+                    class="item w-[calc(50%-(var(--spacing-m)/2))] md:w-[calc((100%-(3*var(--spacing-m)))/4)] lg:w-[calc((100%-(3*var(--spacing-l)))/4)] text-center flex flex-col items-center gap-2.5">
+                    <img class="w-[85px] h-[85px] lg:w-[110px] lg:h-[110px] object-contain"
+                        src="assets/images/services-1.svg" alt="">
+                    <p class="text-[16px] lg:text-title-m leading-[1.4]">Signage & Way-Finding Consultancy</p>
+                </div>
+                <div
+                    class="item w-[calc(50%-(var(--spacing-m)/2))] md:w-[calc((100%-(3*var(--spacing-m)))/4)] lg:w-[calc((100%-(3*var(--spacing-l)))/4)] text-center flex flex-col items-center gap-2.5">
+                    <img class="w-[85px] h-[85px] lg:w-[110px] lg:h-[110px] object-contain"
+                        src="assets/images/services-2.svg" alt="">
+                    <p class="text-[16px] lg:text-title-m leading-[1.4]">Historical Operation <br />Advisory</p>
+                </div>
+                <div
+                    class="item w-[calc(50%-(var(--spacing-m)/2))] md:w-[calc((100%-(3*var(--spacing-m)))/4)] lg:w-[calc((100%-(3*var(--spacing-l)))/4)] text-center flex flex-col items-center gap-2.5">
+                    <img class="w-[85px] h-[85px] lg:w-[110px] lg:h-[110px] object-contain"
+                        src="assets/images/services-3.svg" alt="">
+                    <p class="text-[16px] lg:text-title-m leading-[1.4]">Business Administration Licensing</p>
+                </div>
+                <div
+                    class="item w-[calc(50%-(var(--spacing-m)/2))] md:w-[calc((100%-(3*var(--spacing-m)))/4)] lg:w-[calc((100%-(3*var(--spacing-l)))/4)] text-center flex flex-col items-center gap-2.5">
+                    <img class="w-[85px] h-[85px] lg:w-[110px] lg:h-[110px] object-contain"
+                        src="assets/images/services-4.svg" alt="">
+                    <p class="text-[16px] lg:text-title-m leading-[1.4]">Feasibility Study for Lands & Buildings</p>
+                </div>
+                <div
+                    class="item w-[calc(50%-(var(--spacing-m)/2))] md:w-[calc((100%-(3*var(--spacing-m)))/4)] lg:w-[calc((100%-(3*var(--spacing-l)))/4)] text-center flex flex-col items-center gap-2.5">
+                    <img class="w-[85px] h-[85px] lg:w-[110px] lg:h-[110px] object-contain"
+                        src="assets/images/services-5.svg" alt="">
+                    <p class="text-[16px] lg:text-title-m leading-[1.4]">Design & Built <br />Consultancy</p>
+                </div>
+                <div
+                    class="item w-[calc(50%-(var(--spacing-m)/2))] md:w-[calc((100%-(3*var(--spacing-m)))/4)] lg:w-[calc((100%-(3*var(--spacing-l)))/4)] text-center flex flex-col items-center gap-2.5">
+                    <img class="w-[85px] h-[85px] lg:w-[110px] lg:h-[110px] object-contain"
+                        src="assets/images/services-6.svg" alt="">
+                    <p class="text-[16px] lg:text-title-m leading-[1.4]">Project Administration & Management</p>
+                </div>
+                <div
+                    class="item w-[calc(50%-(var(--spacing-m)/2))] md:w-[calc((100%-(3*var(--spacing-m)))/4)] lg:w-[calc((100%-(3*var(--spacing-l)))/4)] text-center flex flex-col items-center gap-2.5">
+                    <img class="w-[85px] h-[85px] lg:w-[110px] lg:h-[110px] object-contain"
+                        src="assets/images/services-7.svg" alt="">
+                    <p class="text-[16px] lg:text-title-m leading-[1.4]">Local Macau Statutory Submission & Technical
+                        Support</p>
+                </div>
+            </div>
+        </section>
+        <section class="about-award-sec px-page-x  pt-section-y-s pb-section-y-l bg-grey">
+            <h2 class="text-h1 tracking-[0.01em] font-medium mb-100">Awards & <br />Certificates
+            </h2>
+            <div class="lg:px-22.5  flex flex-col gap-xxxl">
+                <!-- Item -->
+                <div class="grid grid-cols-1 lg:grid-cols-[100px_1fr] gap-4">
+                    <div>
+                        <span class="text-tertiary inline-block text-title-l leading-[normal]">2025</span>
+                    </div>
+                    <div class="flex flex-col gap-5">
+                        <div class="grid grid-cols-1 lg:grid-cols-[1fr_200px] gap-2.5 lg:gap-7">
+                            <p class="text-title-l leading-6 lg:leading-[27px]">Shaw Contract Design Awards 2025
+                                (Best of Greater
+                                China)</p>
+                            <span class="inline-block text-[16px] leading-[19px]">3J Generative Space</span>
+                        </div>
+                        <div class="grid grid-cols-1 lg:grid-cols-[1fr_200px] gap-2.5 lg:gap-7">
+                            <p class="text-title-l leading-6 lg:leading-[27px]">BEAM Plus New Buildings V2.0 —
+                                Platinum Rating</p>
+                            <span class="inline-block text-[16px] leading-[19px]">Affiliated School of the University
+                                of Macau "Hau Tak Building"</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Item -->
+                <div class="grid grid-cols-1 lg:grid-cols-[100px_1fr] gap-4">
+                    <div>
+                        <span class="text-tertiary inline-block text-title-l leading-[normal]">2022</span>
+                    </div>
+                    <div class="flex flex-col gap-5">
+                        <div class="grid grid-cols-1 lg:grid-cols-[1fr_200px] gap-2.5 lg:gap-7">
+                            <p class="text-title-l leading-6 lg:leading-[27px]">Asia Pacific Property Awards —
+                                Architecture (5
+                                Stars)
+                                <br />Asia Pacific Property Awards — Development (5 Stars)
+                            </p>
+                            <span class="inline-block text-[16px] leading-[19px]">Extension Project of the Affiliated
+                                School of the University of Macau</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Item -->
+                <div class="grid grid-cols-1 lg:grid-cols-[100px_1fr] gap-4">
+                    <div>
+                        <span class="text-tertiary inline-block text-title-l leading-[normal]">2021</span>
+                    </div>
+                    <div class="flex flex-col gap-5">
+                        <div class="grid grid-cols-1 lg:grid-cols-[1fr_200px] gap-2.5 lg:gap-7">
+                            <p class="text-title-l leading-6 lg:leading-[27px]">Asia Pacific Property Awards —
+                                Interior Design (5
+                                Stars)
+                            </p>
+                            <span class="inline-block text-[16px] leading-[19px]">FUFA Child and Family Centre,
+                                Macau</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Item -->
+                <div class="grid grid-cols-1 lg:grid-cols-[100px_1fr] gap-4">
+                    <div>
+                        <span class="text-tertiary inline-block text-title-l leading-[normal]">2020</span>
+                    </div>
+                    <div class="flex flex-col gap-5">
+                        <div class="grid grid-cols-1 lg:grid-cols-[1fr_200px] gap-2.5 lg:gap-7">
+                            <p class="text-title-l leading-6 lg:leading-[27px]">Asia Pacific Property Awards —
+                                Architecture (5
+                                Stars)
+                            </p>
+                            <span class="inline-block text-[16px] leading-[19px]">New Tuition Building, Our Lady of
+                                Fatima Girls' School</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Item -->
+                <div class="grid grid-cols-1 lg:grid-cols-[100px_1fr] gap-4">
+                    <div>
+                        <span class="text-tertiary inline-block text-title-l leading-[normal]">2018</span>
+                    </div>
+                    <div class="flex flex-col gap-5">
+                        <div class="grid grid-cols-1 lg:grid-cols-[1fr_200px] gap-2.5 lg:gap-7">
+                            <p class="text-title-l leading-6 lg:leading-[27px]">Hong Kong Institute of Architects
+                                Annual Award —
+                                Theme Architectural Award
+                            </p>
+                            <span class="inline-block text-[16px] leading-[19px]">Architectural research: "Macao
+                                Barrier Free Access Design Guidelines"</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Item -->
+                <div class="grid grid-cols-1 lg:grid-cols-[100px_1fr] gap-4">
+                    <div>
+                        <span class="text-tertiary inline-block text-title-l leading-[normal]">2014</span>
+                    </div>
+                    <div class="flex flex-col gap-5">
+                        <div class="grid grid-cols-1 lg:grid-cols-[1fr_200px] gap-2.5 lg:gap-7">
+                            <p class="text-title-l leading-6 lg:leading-[27px]">Gold Prize, China National Habitat
+                                Design
+                                Competition (Architectural Society of China)
+                            </p>
+                            <span class="inline-block text-[16px] leading-[19px]">Re-construction of Colégio de Santa
+                                Rosa de Lima, Chinese Section</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        <section
+            class="our-new-vision-sec text-white  relative overflow-hidden flex flex-col  min-h-[622px] lg:min-h-[calc(100dvh-64px)] px-page-x pt-section-y-s pb-section-y-l"
+            style="background: url(assets/images/our-new-vision-bg.png) no-repeat center / cover;">
+            <div class="overlay absolute inset-0 bg-black/30 pointer-events-none"></div>
+            <div class="relative z-1 flex-1 flex flex-col items-start justify-between gap-l">
+                <h2 class="text-h1 font-medium tracking-[0.01em] ">Our
+                    <br />New
+                    <br />Vision
+                </h2>
+                <div class="text-title-l leading-5.5 md:leading-6 lg:leading-[27px] max-w-[375px]">
+                    <p>Dynasty Plaza 3J Office, a generative space to act as a creative hub in Macau beyond
+                        architecture. Now open for booking.</p>
+                </div>
+                <button class="btn btn-primary cursor-pointer js-form-trigger" data-form-type="booking">
+                    Booking
+                </button>
+            </div>
+        </section>
+        <div class="popup-form ">
+
+            <div class="popup-form__overlay absolute inset-0 bg-black/45 js-popup-form-close"></div>
+
+            <aside
+                class="popup-form__panel absolute top-0 right-0 h-full overflow-y-auto bg-white w-full md:w-[min(600px,100%)]"
+                role="dialog" aria-modal="true" aria-label="Booking form">
+
+                <button type="button"
+                    class="cursor-pointer absolute top-5 right-5 w-8 h-8 flex flex-col items-center justify-center z-2 popup-form__close js-popup-form-close"
+                    aria-label="Close booking form">
+                    <span class="w-6 h-px bg-primary"></span>
+                    <span class="w-6 h-px bg-primary"></span>
+                </button>
+
+                <div class="popup-form__content w-full relative px-page-x py-section-y-s">
+
+                    <h2 class="text-h1 tracking-[-0.01em] font-medium mb-100">
+                        Booking
+                    </h2>
+
+                    <!-- ShortCode Form Here -->
+                    <div class="min-h-[50vh] bg-primary w-full">
+                    </div>
+                </div>
+
+            </aside>
+        </div>
+        <section class="about-contact-sec px-page-x py-section-y-s">
+            <h2 class="text-h1 py-[15px] md:py-2.5 lg:py-0 font-medium tracking-[-0.01em] mb-section-y-s">Contact
+                <br />Us
+            </h2>
+            <div class="grid grid-cols-1 lg:grid-cols-[1fr_440px] gap-5">
+                <div class="contact-map-wrapper h-[450px] w-full">
+                    <div id="map" class="w-full h-full "></div>
+                </div>
+                <div>
+                    <div class="max-w-[350px] h-full flex flex-col justify-between gap-section-y-s items-start">
+                        <div class="flex flex-col gap-5">
+                            <div class="flex flex-col gap-[5px]">
+                                <span class="text-p1 leading-[normal]">Address</span>
+                                <p class="text-title-l leading-[normal]">Avenida Praia Grande No.325, Edif. Cheong Fai
+                                    1ºA, Macau</p>
+                            </div>
+                            <div class="flex flex-col gap-[5px]">
+                                <span class="text-p1 leading-[normal]">Telephone</span>
+                                <p class="text-title-l leading-[normal]"><a href="#">(853) 2875 2667</a></p>
+                            </div>
+                            <div class="flex flex-col gap-[5px]">
+                                <span class="text-p1 leading-[normal]">Fax</span>
+                                <p class="text-title-l leading-[normal]">(853) 2875 2544</p>
+                            </div>
+                            <div class="flex flex-col gap-[5px]">
+                                <span class="text-p1 leading-[normal]">Inquiry</span>
+                                <p class="text-title-l leading-[normal]"><a href="#">admin@joychoi.com</a></p>
+                            </div>
+                        </div>
+                        <button class="btn btn-default cursor-pointer js-form-trigger" data-form-type="inquiry">
+                            Inquiry
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+        <!-- Popup Form -->
+        <div class="popup-form" data-form-popup>
+            <div class="popup-form__overlay absolute inset-0 bg-black/45 js-form-close"></div>
+
+            <aside
+                class="popup-form__panel absolute top-0 right-0 h-full overflow-y-auto bg-white w-full md:w-[min(600px,100%)]"
+                role="dialog" aria-modal="true">
+                <button type="button"
+                    class="cursor-pointer absolute top-5 right-5 w-8 h-8 flex flex-col items-center justify-center z-2 popup-form__close js-form-close"
+                    aria-label="Close form">
+                    <span class="w-6 h-px bg-primary  "></span>
+                    <span class="w-6 h-px bg-primary  "></span>
+                </button>
+
+                <div class="popup-form__content w-full relative px-page-x py-section-y-s">
+
+                    <div class="form-content" data-form-content="booking">
+                        <h2 class="text-h1 tracking-[-0.01em] font-medium mb-100">
+                            Booking
+                        </h2>
+
+                        <div class="min-h-[50vh] bg-primary w-full">
+                            Booking Form
+                        </div>
+                    </div>
+
+                    <div class="form-content hidden" data-form-content="inquiry">
+                        <h2 class="text-h1 tracking-[-0.01em] font-medium mb-100">
+                            Inquiry
+                        </h2>
+                        <div class="min-h-[50vh] bg-primary w-full">
+                            Inquiry Form
+                        </div>
+                    </div>
+
+                </div>
+            </aside>
+        </div>
+    </main>
+    <footer class="footer-site px-page-x border-t border-grey pt-[15px] pb-4 md:pt-5.5 md:pb-[23px]">
+        <div class="flex flex-col md:flex-row flex-wrap justify-between items-center gap-2.5">
+            <div class="flex-1">
+                <p class="text-p1 leading-[normal] text-center md:text-left">© 2026 Joy Choi Arquitectos Atelier Lda.
+                    <span class="block md:inline-block">All rights reserved.</span>
+                </p>
+            </div>
+            <div class="flex gap-4">
+                <a href="#" target="_blank">
+                    <img class="w-auto max-h-[24px] object-contain" src="assets/images/instagram-icon.svg" alt="">
+                </a>
+                <a href="#" target="_blank">
+                    <img class="w-auto max-h-[24px] object-contain" src="assets/images/facebook-icon.svg" alt="">
+                </a>
+
+                <div class="relative group js-wechat cursor-pointer">
+                    <button type="button" class="cursor-pointer js-wechat-trigger">
+                        <img class="w-auto max-h-[24px] object-contain" src="assets/images/wechat-icon.svg" alt="">
+                    </button>
+
+                    <div class="absolute left-1/2 bottom-full z-50 pb-2
+               hidden -translate-x-1/2
+               md:group-hover:block
+               js-wechat-qr">
+                        <img class="w-24 h-24 max-w-[unset] object-contain bg-white p-2 shadow-lg"
+                            src="assets/images/qr-img.png" alt="WeChat QR Code">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+    <script src="assets/js/custom.js"></script>
+
+</body>
+
+</html>
