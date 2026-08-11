@@ -13,6 +13,7 @@
 
     /* Spacing */
     --spacing-page-x: 50px;
+    --spacing-page-x-l: 220px;
     --spacing-section-y-s: 50px;
     --spacing-section-y-l: 150px;
 
@@ -51,6 +52,7 @@
 
 @media (max-width: 1024px) {
     :root {
+        --spacing-page-x-l: 35px;
         --spacing-page-x: 35px;
         --spacing-section-y-l: 100px;
 
@@ -70,6 +72,7 @@
 
 @media (max-width: 767px) {
     :root {
+        --spacing-page-x-l: 20px;
         --spacing-page-x: 20px;
         --spacing-section-y-l: 80px;
 

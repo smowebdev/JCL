@@ -18,16 +18,16 @@
             </a>
             <nav class="header-menu hidden md:block text-[16px] leading-4.75  md:mr-17.5 lg:mr-25">
                 <ul class="flex gap-5 lg:gap-l">
-                    <li><a href="#">Project</a></li>
-                    <li><a href="#">People</a></li>
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Story</a></li>
+                    <li><a href="project.html">Project</a></li>
+                    <li><a href="people.html">People</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="idea.html">Idea</a></li>
                 </ul>
             </nav>
-            <div class="header-lang hidden md:flex text-[16px]  leading-4.75  gap-4">
-                <a href="#" class="text-grey">简</a>
-                <a href="#" class="text-grey">繁</a>
-                <a href="#" class="text-primary">EN</a>
+            <div class="header-lang text-grey hidden md:flex text-[16px]  leading-4.75  gap-4">
+                <a href="#">简</a>
+                <a href="#">繁</a>
+                <a href="#" class="active">EN</a>
             </div>
             <div class="menu-toggle block md:hidden">
                 <span></span>
@@ -43,10 +43,10 @@
             </div>
             <nav class="flex-1 flex items-center text-center text-[30px] leading-9 justify-center">
                 <ul class="flex flex-col gap-l">
-                    <li><a href="#">Project</a></li>
-                    <li><a href="#">People</a></li>
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Story</a></li>
+                    <li><a href="project.html">Project</a></li>
+                    <li><a href="people.html">People</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="idea.html">Idea</a></li>
                 </ul>
             </nav>
             <div class="header-socials py-l flex justify-center gap-6">
@@ -56,13 +56,39 @@
                 <a href="#" target="_blank">
                     <img class="w-6 h-6 object-contain" src="assets/images/facebook-icon.svg" alt="">
                 </a>
-                <a href="#" target="_blank">
-                    <img class="w-6 h-6 object-contain" src="assets/images/wechat-icon.svg" alt="">
-                </a>
+                <div class="relative group js-wechat cursor-pointer">
+                    <button type="button" class="cursor-pointer js-wechat-trigger">
+                        <img class="w-6 h-6 object-contain" src="assets/images/wechat-icon.svg" alt="WeChat">
+                    </button>
+
+                    <div class="absolute left-1/2 bottom-full z-50 pb-2
+               hidden -translate-x-1/2
+               md:group-hover:block
+               js-wechat-qr">
+                        <img class="w-24 h-24 max-w-[unset] object-contain bg-white p-2 shadow-lg"
+                            src="assets/images/qr-img.png" alt="WeChat QR Code">
+                    </div>
+                </div>
             </div>
         </div>
     </header>
     <main>
+        <section
+            class="custom-banner about-banner text-white flex items-center justify-center p-page-x  relative overflow-hidden min-h-[calc(100dvh-48px)] md:min-h-[622px] lg:min-h-[calc(100dvh-64px)]"
+            style="background: url('assets/images/people-banner.jpg') no-repeat center / cover;">
+            <div class="banner-overlay absolute inset-0 z-0 bg-black/45 pointer-events-none"></div>
+            <div class="relative z-1">
+                <h1 class="mb-xl text-h1 tracking-[-0.01em] font-medium">Mixed discipline,<br>
+                    One common goal.
+                </h1>
+                <div class="text-title-l leading-[22px] md:leading-[normal]">
+                    <p>Our team of registered architects, engineers, and interior designers brings over 20 years of
+                        collective expertise under one common goal to build better cities. Beyond traditional
+                        architectural design, we offer a comprehensive suite of professional services tailored to the
+                        full lifecycle of a project.</p>
+                </div>
+            </div>
+        </section>
         <section class="py-section-y-s px-page-x bg-secondary">
             <h2 class="text-primary text-h1 w-[297px] font-medium tracking-[-1%]">Key <br> Member</h2>
             <div class="py-100 flex flex-wrap gap-y-xxl gap-x-s justify-center">
@@ -186,14 +212,15 @@
             </div>
             <div class="py-section-y-s px-page-x bg-grey">
                 <div class="  pb-100 flex gap-[50px] flex-col  items-start">
-                    <p class="text-title-l leading-[normal]">Join our team. JCL designs buildings and spaces that inspire people. We're a
+                    <p class="text-title-l leading-[normal]">Join our team. JCL designs buildings and spaces that
+                        inspire people. We're a
                         diverse team of
                         innovative, entrepreneurial people with an ambitious vision: to create the world's best, most
                         sustainable places. It will be your responsibility, even as the newest member of our team, to
                         help
                         us make a positive impact on the world. If this sounds good, let's talk.</p>
 
-                    <a href="#" class="btn btn-default shrink-0">
+                    <a href="#" class="btn btn-default shrink-0 hover:bg-white hover:border-white">
                         Inquiry
                     </a>
                 </div>
