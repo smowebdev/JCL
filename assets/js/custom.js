@@ -66,11 +66,13 @@ $(function () {
     const timelineYearElement = $timelineYear[0];
     const heroItemElements = $heroItems.toArray();
 
+    const $timelinePrev = $(".timeline__btn--prev");
+    const $timelineNext = $(".timeline__btn--next");
+
     const floatingItems = [];
 
     heroItemElements.forEach(function (heroItem) {
       const floating = heroItem.querySelector(".hero-side__floating");
-
       const main = heroItem.querySelector(".hero-main");
 
       if (!floating || !main) {
@@ -133,6 +135,52 @@ $(function () {
       });
     }
 
+    function getCurrentHeroIndex() {
+      const scrollY = homeHeroInner.scrollTop;
+
+      const viewportCenter = scrollY + homeHeroInner.clientHeight / 2;
+
+      let currentIndex = 0;
+
+      heroItemElements.forEach(function (hero, index) {
+        const heroTop = hero.offsetTop;
+        const heroBottom = heroTop + hero.offsetHeight;
+
+        if (viewportCenter >= heroTop && viewportCenter < heroBottom) {
+          currentIndex = index;
+        }
+      });
+
+      return currentIndex;
+    }
+
+    function scrollToHero(index) {
+      if (index < 0 || index >= heroItemElements.length) {
+        return;
+      }
+
+      const targetHero = heroItemElements[index];
+
+      $homeHeroInner.stop().animate(
+        {
+          scrollTop: targetHero.offsetTop,
+        },
+        600,
+      );
+    }
+
+    $timelinePrev.on("click", function () {
+      const currentIndex = getCurrentHeroIndex();
+
+      scrollToHero(currentIndex - 1);
+    });
+
+    $timelineNext.on("click", function () {
+      const currentIndex = getCurrentHeroIndex();
+
+      scrollToHero(currentIndex + 1);
+    });
+
     let timelineTicking = false;
 
     function requestTimelineUpdate() {
@@ -144,6 +192,7 @@ $(function () {
 
       requestAnimationFrame(function () {
         calculateTimeline();
+
         timelineTicking = false;
       });
     }
