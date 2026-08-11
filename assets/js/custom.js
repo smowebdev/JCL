@@ -278,4 +278,44 @@ $(function () {
     }
   });
   // Client Logo Marquee - End
+  // Sector Item Toggle - Start
+  $('.sector-item').each(function () {
+    const $item = $(this);
+    const $toggle = $item.find('.sector-toggle');
+    const $content = $item.find('.sector-content');
+    const $icon = $item.find('.sector-icon');
+
+    $toggle.on('click', function () {
+      if ($(window).width() >= 768) return;
+
+      const isOpen = $content.hasClass('is-open');
+
+      if (isOpen) {
+        $content
+          .removeClass('is-open')
+          .addClass('grid-rows-[0fr]');
+
+        $icon.removeClass('rotate-180');
+      } else {
+        $content
+          .addClass('is-open')
+          .removeClass('grid-rows-[0fr]');
+
+        $icon.addClass('rotate-180');
+      }
+    });
+  });
+  // Sector Item Toggle - End
+
+  // Group Toggle - Start
+  $('.group[data-tab]').on('click', function () {
+    $(this).toggleClass('active');
+  });
+    // Group Toggle - End
+
+    $('.btn-toggle').on('click', function (e) {
+    e.preventDefault();
+
+    $(this).toggleClass('bg-tertiary text-white border-tertiary');
+});
 });
