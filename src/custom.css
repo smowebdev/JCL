@@ -157,7 +157,14 @@ a {
     }
 }
 
+.leaflet-container {
+    font-family: "Inter", sans-serif;
+}
 
+.leaflet-popup-content {
+    font-size: var(--text-p1);
+    text-align: center;
+}
 
 @media(max-width:1023px) {
     .client-logo-marquee {
