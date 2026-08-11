@@ -1,27 +1,53 @@
-$(function () {
-  "use strict";
-
-  // Toggle Menu - Start
+jQuery(document).ready(function ($) {
   const $menuToggle = $(".menu-toggle");
   const $mobileMenu = $(".menu-mobile");
+  const $wechat = $(".js-wechat");
+  const $wechatTrigger = $(".js-wechat-trigger");
+  const $wechatQr = $(".js-wechat-qr");
 
+  $wechatTrigger.on("click", function (e) {
+    if (window.innerWidth < 768) {
+      e.preventDefault();
+      e.stopPropagation();
+
+      $wechatQr.toggleClass("hidden");
+    }
+  });
+  // Toggle Menu - Start
   $menuToggle.on("click", function (e) {
     e.stopPropagation();
 
     $(this).toggleClass("active");
     $mobileMenu.toggleClass("active");
+
+    if (!$mobileMenu.hasClass("active")) {
+      $wechatQr.addClass("hidden");
+    }
   });
 
   $mobileMenu.on("click", function (e) {
+    if ($(e.target).closest(".js-wechat").length) {
+      e.stopPropagation();
+      return;
+    }
+
+    $wechatQr.addClass("hidden");
+
     e.stopPropagation();
   });
 
-  $(document).on("click", function () {
-    $menuToggle.removeClass("active");
-    $mobileMenu.removeClass("active");
+  $(document).on("click", function (e) {
+    if (!$(e.target).closest(".menu-mobile").length) {
+      $wechatQr.addClass("hidden");
+
+      $menuToggle.removeClass("active");
+      $mobileMenu.removeClass("active");
+    }
   });
 
   $mobileMenu.find("a").on("click", function () {
+    $wechatQr.addClass("hidden");
+
     $menuToggle.removeClass("active");
     $mobileMenu.removeClass("active");
   });

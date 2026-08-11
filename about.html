@@ -61,9 +61,19 @@
                 <a href="#" target="_blank">
                     <img class="w-6 h-6 object-contain" src="assets/images/facebook-icon.svg" alt="">
                 </a>
-                <a href="#" target="_blank">
-                    <img class="w-6 h-6 object-contain" src="assets/images/wechat-icon.svg" alt="">
-                </a>
+                <div class="relative group js-wechat cursor-pointer">
+                    <button type="button" class="cursor-pointer js-wechat-trigger">
+                        <img class="w-6 h-6 object-contain" src="assets/images/wechat-icon.svg" alt="WeChat">
+                    </button>
+
+                    <div class="absolute left-1/2 bottom-full z-50 pb-2
+               hidden -translate-x-1/2
+               md:group-hover:block
+               js-wechat-qr">
+                        <img class="w-24 h-24 max-w-[unset] object-contain bg-white p-2 shadow-lg"
+                            src="assets/images/qr-img.png" alt="WeChat QR Code">
+                    </div>
+                </div>
             </div>
         </div>
     </header>
@@ -377,9 +387,20 @@
                 <a href="#" target="_blank">
                     <img class="w-auto max-h-[24px] object-contain" src="assets/images/facebook-icon.svg" alt="">
                 </a>
-                <a href="#" target="_blank">
-                    <img class="w-auto max-h-[24px] object-contain" src="assets/images/wechat-icon.svg" alt="">
-                </a>
+
+                <div class="relative group js-wechat cursor-pointer">
+                    <button type="button" class="cursor-pointer js-wechat-trigger">
+                        <img class="w-auto max-h-[24px] object-contain" src="assets/images/wechat-icon.svg" alt="">
+                    </button>
+
+                    <div class="absolute left-1/2 bottom-full z-50 pb-2
+               hidden -translate-x-1/2
+               md:group-hover:block
+               js-wechat-qr">
+                        <img class="w-24 h-24 max-w-[unset] object-contain bg-white p-2 shadow-lg"
+                            src="assets/images/qr-img.png" alt="WeChat QR Code">
+                    </div>
+                </div>
             </div>
         </div>
     </footer>
