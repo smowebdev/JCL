@@ -197,6 +197,28 @@ jQuery(document).ready(function ($) {
     $homeHeroInner.on("mousemove", function (event) {
       const rect = homeHeroInner.getBoundingClientRect();
       const mouseY = event.clientY - rect.top;
+      const currentIndex = getCurrentHeroIndex();
+
+      const isFirstHero = currentIndex === 0;
+      const isLastHero = currentIndex === heroItemElements.length - 1;
+
+      if (isFirstHero) {
+        $homeHeroInner.css(
+          "cursor",
+          'url("/assets/images/arrow-hero-down.svg") 12 12, auto',
+        );
+
+        return;
+      }
+
+      if (isLastHero) {
+        $homeHeroInner.css(
+          "cursor",
+          'url("/assets/images/arrow-hero.svg") 12 12, auto',
+        );
+
+        return;
+      }
 
       if (mouseY < rect.height / 2) {
         $homeHeroInner.css(
@@ -219,6 +241,19 @@ jQuery(document).ready(function ($) {
       const rect = homeHeroInner.getBoundingClientRect();
       const mouseY = event.clientY - rect.top;
       const currentIndex = getCurrentHeroIndex();
+
+      const isFirstHero = currentIndex === 0;
+      const isLastHero = currentIndex === heroItemElements.length - 1;
+
+      if (isFirstHero) {
+        scrollToHero(currentIndex + 1);
+        return;
+      }
+
+      if (isLastHero) {
+        scrollToHero(currentIndex - 1);
+        return;
+      }
 
       if (mouseY < rect.height / 2) {
         scrollToHero(currentIndex - 1);
