@@ -23,10 +23,10 @@
             </a>
             <nav class="header-menu hidden md:block text-[16px] leading-4.75  md:mr-17.5 lg:mr-25">
                 <ul class="flex gap-5 lg:gap-l">
-                    <li><a href="#">Project</a></li>
-                    <li><a href="#">People</a></li>
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Story</a></li>
+                    <li><a href="project.html">Project</a></li>
+                    <li><a href="people.html">People</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="idea.html">Idea</a></li>
                 </ul>
             </nav>
             <div class="header-lang hidden md:flex text-[16px]  leading-4.75  gap-4">
@@ -48,10 +48,10 @@
             </div>
             <nav class="flex-1 flex items-center text-center text-[30px] leading-9 justify-center">
                 <ul class="flex flex-col gap-l">
-                    <li><a href="#">Project</a></li>
-                    <li><a href="#">People</a></li>
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Story</a></li>
+                    <li><a href="project.html">Project</a></li>
+                    <li><a href="people.html">People</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="idea.html">Idea</a></li>
                 </ul>
             </nav>
             <div class="header-socials py-l flex justify-center gap-6">
@@ -254,25 +254,27 @@
                     <p>Dynasty Plaza 3J Office, a generative space to act as a creative hub in Macau beyond
                         architecture. Now open for booking.</p>
                 </div>
-                <button class="btn btn-primary cursor-pointer js-booking-form-trigger">Booking</button>
+                <button class="btn btn-primary cursor-pointer js-form-trigger" data-form-type="booking">
+                    Booking
+                </button>
             </div>
         </section>
-        <div class="booking-form ">
+        <div class="popup-form ">
 
-            <div class="booking-form__overlay absolute inset-0 bg-black/45 js-booking-form-close"></div>
+            <div class="popup-form__overlay absolute inset-0 bg-black/45 js-popup-form-close"></div>
 
             <aside
-                class="booking-form__panel absolute top-0 right-0 h-full overflow-y-auto bg-white w-full md:w-[min(600px,100%)]"
+                class="popup-form__panel absolute top-0 right-0 h-full overflow-y-auto bg-white w-full md:w-[min(600px,100%)]"
                 role="dialog" aria-modal="true" aria-label="Booking form">
 
                 <button type="button"
-                    class="cursor-pointer absolute top-5 right-5 w-8 h-8 flex flex-col items-center justify-center z-2 booking-form__close js-booking-form-close"
+                    class="cursor-pointer absolute top-5 right-5 w-8 h-8 flex flex-col items-center justify-center z-2 popup-form__close js-popup-form-close"
                     aria-label="Close booking form">
                     <span class="w-6 h-px bg-primary"></span>
                     <span class="w-6 h-px bg-primary"></span>
                 </button>
 
-                <div class="booking-form__content w-full relative px-page-x py-section-y-s">
+                <div class="popup-form__content w-full relative px-page-x py-section-y-s">
 
                     <h2 class="text-h1 tracking-[-0.01em] font-medium mb-100">
                         Booking
@@ -314,12 +316,52 @@
                                 <p class="text-title-l leading-[normal]"><a href="#">admin@joychoi.com</a></p>
                             </div>
                         </div>
-                        <a href="#" class="btn btn-default">Inquiry</a>
+                        <button class="btn btn-default cursor-pointer js-form-trigger" data-form-type="inquiry">
+                            Inquiry
+                        </button>
                     </div>
                 </div>
             </div>
 
         </section>
+        <!-- Popup Form -->
+        <div class="popup-form" data-form-popup>
+            <div class="popup-form__overlay absolute inset-0 bg-black/45 js-form-close"></div>
+
+            <aside
+                class="popup-form__panel absolute top-0 right-0 h-full overflow-y-auto bg-white w-full md:w-[min(600px,100%)]"
+                role="dialog" aria-modal="true">
+                <button type="button"
+                    class="cursor-pointer absolute top-5 right-5 w-8 h-8 flex flex-col items-center justify-center z-2 popup-form__close js-form-close"
+                    aria-label="Close form">
+                    <span class="w-6 h-px bg-primary  "></span>
+                    <span class="w-6 h-px bg-primary  "></span>
+                </button>
+
+                <div class="popup-form__content w-full relative px-page-x py-section-y-s">
+
+                    <div class="form-content" data-form-content="booking">
+                        <h2 class="text-h1 tracking-[-0.01em] font-medium mb-100">
+                            Booking
+                        </h2>
+
+                        <div class="min-h-[50vh] bg-primary w-full">
+                            Booking Form
+                        </div>
+                    </div>
+
+                    <div class="form-content hidden" data-form-content="inquiry">
+                        <h2 class="text-h1 tracking-[-0.01em] font-medium mb-100">
+                            Inquiry
+                        </h2>
+                        <div class="min-h-[50vh] bg-primary w-full">
+                            Inquiry Form
+                        </div>
+                    </div>
+
+                </div>
+            </aside>
+        </div>
     </main>
     <footer class="footer-site px-page-x border-t border-grey pt-[15px] pb-4 md:pt-5.5 md:pb-[23px]">
         <div class="flex flex-col md:flex-row flex-wrap justify-between items-center gap-2.5">
@@ -341,6 +383,7 @@
             </div>
         </div>
     </footer>
+
 
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>

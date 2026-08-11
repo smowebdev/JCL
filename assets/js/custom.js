@@ -328,26 +328,36 @@ $(function () {
   });
   // Client Logo Marquee - End
 
-  // Booking Popup - Start
-  const $bookingForm = $(".booking-form");
+  // Form Popup - Start
+  const $formPopup = $("[data-form-popup]");
+  const $formContent = $(".form-content");
 
-  $(".js-booking-form-trigger").on("click", function () {
-    $bookingForm.addClass("is-open");
-    $("body").addClass("booking-form-open");
+  $(".js-form-trigger").on("click", function () {
+    const formType = $(this).data("form-type");
+
+    $formContent.addClass("hidden");
+
+    $(`[data-form-content="${formType}"]`).removeClass("hidden");
+
+    $formPopup.addClass("is-open");
+    $("body").addClass("popup-form-open");
   });
 
-  $(".js-booking-form-close").on("click", function () {
-    $bookingForm.removeClass("is-open");
-    $("body").removeClass("booking-form-open");
+  $(".js-form-close").on("click", function () {
+    closeFormPopup();
   });
 
   $(document).on("keydown", function (e) {
     if (e.key === "Escape") {
-      $bookingForm.removeClass("is-open");
-      $("body").removeClass("booking-form-open");
+      closeFormPopup();
     }
   });
-  // Booking Popup - End
+
+  function closeFormPopup() {
+    $formPopup.removeClass("is-open");
+    $("body").removeClass("popup-form-open");
+  }
+  // Form Popup - End
 
   // Map - Start
   const key = "QTfFDTPWze2jdhLgnmCb";

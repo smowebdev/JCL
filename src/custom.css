@@ -97,7 +97,7 @@ a {
     animation-play-state: paused;
 }
 
-.booking-form {
+.popup-form {
     position: fixed;
     inset: 0;
     z-index: 9999;
@@ -107,35 +107,35 @@ a {
 
 
 
-.booking-form__overlay {
+.popup-form__overlay {
     opacity: 0;
     transition: all 0.4s ease;
 }
 
-.booking-form__panel {
+.popup-form__panel {
     transform: translateX(100%);
     transition: all 0.5s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-.booking-form__close span:first-child {
+.popup-form__close span:first-child {
     transform: rotate(45deg);
 }
 
-.booking-form__close span:last-child {
+.popup-form__close span:last-child {
     transform: rotate(-45deg);
 }
 
 
-.booking-form.is-open {
+.popup-form.is-open {
     visibility: visible;
     pointer-events: auto;
 }
 
-.booking-form.is-open .booking-form__overlay {
+.popup-form.is-open .popup-form__overlay {
     opacity: 1;
 }
 
-.booking-form.is-open .booking-form__panel {
+.popup-form.is-open .popup-form__panel {
     transform: translateX(0);
 }
 
