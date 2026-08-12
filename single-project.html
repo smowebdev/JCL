@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home | JCL</title>
+    <link rel="stylesheet" href="./src/output.css">
+    <link rel="stylesheet" href="./src/custom.css">
+</head>
+
+<body>
+    <header
+        class="header-site border-b border-black/10 bg-white px-page-x pt-3 pb-[11px] md:pt-4 md:pb-[15px] sticky top-0 left-0 w-full">
+        <div class="flex items-center justify-between gap-4">
+            <a href="#" class="block">
+                <img class="w-auto h-6 md:h-6.5 lg:h-8" src="assets/images/logo.svg" alt="">
+            </a>
+            <nav class="header-menu hidden md:block text-[16px] leading-4.75  md:mr-17.5 lg:mr-25">
+                <ul class="flex gap-5 lg:gap-l">
+                    <li><a href="project.html">Project</a></li>
+                    <li><a href="people.html">People</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="idea.html">Idea</a></li>
+                </ul>
+            </nav>
+            <div class="header-lang text-grey hidden md:flex text-[16px]  leading-4.75  gap-4">
+                <a href="#">简</a>
+                <a href="#">繁</a>
+                <a href="#" class="active">EN</a>
+            </div>
+            <div class="menu-toggle block md:hidden">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+
+        <div class="menu-mobile px-5">
+            <div class="header-lang py-l flex justify-center text-primary text-[20px]  leading-6  gap-6">
+                <a href="#">简</a>
+                <a href="#">繁</a>
+            </div>
+            <nav class="flex-1 flex items-center text-center text-[30px] leading-9 justify-center">
+                <ul class="flex flex-col gap-l">
+                    <li><a href="project.html">Project</a></li>
+                    <li><a href="people.html">People</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="idea.html">Idea</a></li>
+                </ul>
+            </nav>
+            <div class="header-socials py-l flex justify-center gap-6">
+                <a href="#" target="_blank">
+                    <img class="w-6 h-6 object-contain" src="assets/images/instagram-icon.svg" alt="">
+                </a>
+                <a href="#" target="_blank">
+                    <img class="w-6 h-6 object-contain" src="assets/images/facebook-icon.svg" alt="">
+                </a>
+                <div class="relative group js-wechat cursor-pointer">
+                    <button type="button" class="cursor-pointer js-wechat-trigger">
+                        <img class="w-6 h-6 object-contain" src="assets/images/wechat-icon.svg" alt="WeChat">
+                    </button>
+
+                    <div class="absolute left-1/2 bottom-full z-50 pb-2
+               hidden -translate-x-1/2
+               md:group-hover:block
+               js-wechat-qr">
+                        <img class="w-24 h-24 max-w-[unset] object-contain bg-white p-2 shadow-lg"
+                            src="assets/images/qr-img.png" alt="WeChat QR Code">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section
+            class="custom-banner about-banner text-white flex items-center justify-center p-page-x  relative overflow-hidden min-h-[calc(100dvh-48px)] md:min-h-[622px] lg:min-h-[calc(100dvh-64px)]"
+            style="background: url('assets/images/single-banner.gif') no-repeat center / cover;">
+            <div class="banner-overlay absolute inset-0 z-0 bg-black/45 pointer-events-none"></div>
+            <div class="relative z-1">
+                <h1 class="mb-xl text-h1 tracking-[-0.01em] font-medium text-center">3J Generative Space </h1>
+            </div>
+            <img src="./assets/images/award.png" class="absolute top-0 right-5 lg:right-[50px] lg:w-[145px] lg:h-[145px] w-[100px] h-[100px] object-cover z-1"
+                alt="">
+        </section>
+        <section class="py-section-y-l">
+            <div class="px-page-x-l">
+                <p class=" text-title-l text-center leading-[124%] tracking-[0.02em]">The project revolves around the
+                    central idea of preserving the void of the
+                    space, establishing a
+                    flexible emptiness capable of accommodating activities of diverse nature. Furniture, fixtures, and
+                    utilities are meticulously embedded into the walls, floors, and ceilings, enabling the interior to
+                    seamlessly return to an open and uncluttered condition when desired.</p>
+            </div>
+            <div class="px-page-x-l pt-80 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-xl gap-y-10">
+                <div class="col-span-1 flex flex-col gap-1 items-center">
+                    <p class="text-title-m leading-[135%]">Location</p>
+                    <p class="text-title-l leading-[normal] text-center">Macau</p>
+                </div>
+                <div class="col-span-1 flex flex-col gap-1 items-center">
+                    <p class="text-title-m leading-[135%]">Status</p>
+                    <p class="text-title-l leading-[normal] text-center">Completed</p>
+                </div>
+                <div class="col-span-1 flex flex-col gap-1 items-center">
+                    <p class="text-title-m leading-[135%]">Year</p>
+                    <p class="text-title-l leading-[normal] text-center">2002-2005</p>
+                </div>
+                <div class="col-span-1 flex flex-col gap-1 items-center">
+                    <p class="text-title-m leading-[135%]">Client</p>
+                    <p class="text-title-l leading-[normal] text-center">JCL</p>
+                </div>
+                <div class="col-span-1 flex flex-col gap-1 items-center">
+                    <p class="text-title-m leading-[135%]">Surface Area</p>
+                    <p class="text-title-l leading-[normal] text-center">100 m2</p>
+                </div>
+                <div class="col-span-1 flex flex-col gap-1 items-center">
+                    <p class="text-title-m leading-[135%]">Theme</p>
+                    <p class="text-title-l leading-[normal] text-center">Generative</p>
+                </div>
+                <div class="col-span-1 flex flex-col gap-1 items-center">
+                    <p class="text-title-m leading-[135%]">Service</p>
+                    <p class="text-title-l leading-[normal] text-center">Interior, project management</p>
+                </div>
+                <div class="col-span-1 flex flex-col gap-1 items-center">
+                    <p class="text-title-m leading-[135%]">Programmes</p>
+                    <p class="text-title-l leading-[normal] text-center">Office, event space</p>
+                </div>
+                <div class="col-span-1 flex flex-col gap-1 items-center">
+                    <p class="text-title-m leading-[135%]">In partnership with</p>
+                    <p class="text-title-l leading-[normal] text-center">A()void</p>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="grid grid-cols-1 lg:grid-cols-[minmax(0,960fr)_minmax(0,394fr)] gap-xl lg:pr-page-x">
+                <div class="aspect-[4/5] sm:aspect-[5/3]">
+                    <img src="./assets/images/single-post-1.png" class="w-full h-full object-cover" alt="">
+                </div>
+                <div
+                    class="px-[35px] lg:px-0 text-center lg:text-start text-title-l leading-[1.22] flex flex-col gap-[30px]">
+                    <p class="">The design manifests a considered homage to the architectural heritage of the Choi
+                        family's
+                        generational legacy in Macau; classical silhouettes rendered in a rich materiality of wood
+                        veneer provide visual gravity and a grounding sense of tradition.</p>
+                    <p>
+                        Contrasting this stability, the space above the datum line expresses an intentional
+                        fragmentation, articulated in tones of luminous whites and silvers. This upper domain is
+                        deliberately abstract and futuristic, subtly suggesting the continuous evolution of the family’s
+                        legacy and reflecting an openness to future possibilities.</p>
+                </div>
+            </div>
+        </section>
+        <section class="py-section-y-l ">
+            <img src="./assets/images/single-post-2.jpg"
+                class="object-cover h-[calc(100dvh-48px)] md:h-[622px] lg:h-[calc(100dvh-64px)] w-full"
+                alt="">
+        </section>
+        <section>
+            <div class="grid grid-cols-1 lg:grid-cols-[minmax(0,394fr)_minmax(0,960fr)] gap-xl lg:pl-page-x">
+                <div
+                    class="order-2 lg:order-1 px-[35px] lg:px-0 text-center lg:text-start text-title-l leading-[1.22] flex flex-col gap-[30px]">
+                    <p class="">The new building occupies 251㎡, while the original building occupies 375㎡. The total
+                        land area is 2,827㎡. The height of the buildings is controlled, and the architectural design
+                        adopts a setback approach. The materials are primarily glass and metal.</p>
+                    <p>A courtyard is left between the new building and the original building. Through the elevated
+                        space on the ground floor, it connects with the rear garden as one, preserving the original
+                        feeling of stepping out from the old building into the garden, while also maintaining the
+                        integrity of the original building.</p>
+                </div>
+                <div class="order-1 lg:order-2 aspect-[4/5] sm:aspect-[5/3]">
+                    <img src="./assets/images/Interior-Image.png" class="w-full h-full object-cover" alt="">
+                </div>
+
+            </div>
+        </section>
+        <section class="py-section-y-l px-page-x">
+            <div id="drag-scroll" class="grid grid-cols-1 gap-4 select-none
+           sm:grid-cols-2
+           lg:flex lg:flex-nowrap lg:overflow-x-auto
+           [&::-webkit-scrollbar]:hidden
+           cursor-grab">
+                <div
+                    class="group relative overflow-hidden cursor-pointer project-image lg:min-w-[270px] lg:h-[180px] lg:w-[270px]  sm:h-[29.75vw] h-[66.666vw]">
+                    <img class="h-full  w-full object-cover transition-transform duration-500 ease-out  group-hover:scale-105"
+                        src="./assets/images/Interior-Image.png" alt="img project">
+                    <div class="absolute inset-0 flex items-center justify-center
+                                    bg-black/45 opacity-0
+                                    transition-opacity duration-300
+                                    group-hover:opacity-100">
+                        <div class="translate-y-4 text-center text-white
+                                            transition-transform duration-300
+                                            group-hover:translate-y-0">
+
+                            <div
+                                class=" text-center text-white text-title-l leading-[normal] gap-1.5 flex items-center justify-center">
+
+                                <span class="text-[12px]">Zoom in</span>
+                                <svg class="animate-arrow-move" width="14" height="11.38" viewBox="0 0 33 27"
+                                    fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M30.6438 12.2637L30.6438 13.8765L-1.40998e-07 13.8765L0 12.2637L30.6438 12.2637Z"
+                                        fill="currentColor" />
+                                    <path
+                                        d="M32.2782 13.1151L19.1631 26.2302L18.0226 25.0898L29.9973 13.1151L18.0226 1.14044L19.1631 0L32.2782 13.1151Z"
+                                        fill="currentColor" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div
+                    class="group relative overflow-hidden cursor-pointer project-image lg:min-w-[270px] lg:h-[180px] lg:w-[270px]  sm:h-[29.75vw] h-[66.666vw]">
+                    <img class="h-full  w-full object-cover transition-transform duration-500 ease-out  group-hover:scale-105"
+                        src="./assets/images/single-slide-2.png" alt="img project">
+                    <div class="absolute inset-0 flex items-center justify-center
+                                    bg-black/45 opacity-0
+                                    transition-opacity duration-300
+                                    group-hover:opacity-100">
+                        <div class="translate-y-4 text-center text-white
+                                            transition-transform duration-300
+                                            group-hover:translate-y-0">
+
+                            <div
+                                class=" text-center text-white text-title-l leading-[normal] gap-1.5 flex items-center justify-center">
+
+                                <span class="text-[12px]">Zoom in</span>
+                                <svg class="animate-arrow-move" width="14" height="11.38" viewBox="0 0 33 27"
+                                    fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M30.6438 12.2637L30.6438 13.8765L-1.40998e-07 13.8765L0 12.2637L30.6438 12.2637Z"
+                                        fill="currentColor" />
+                                    <path
+                                        d="M32.2782 13.1151L19.1631 26.2302L18.0226 25.0898L29.9973 13.1151L18.0226 1.14044L19.1631 0L32.2782 13.1151Z"
+                                        fill="currentColor" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div
+                    class="group relative overflow-hidden cursor-pointer project-image lg:min-w-[270px] lg:h-[180px] lg:w-[270px]  sm:h-[29.75vw] h-[66.666vw]">
+                    <img class="h-full  w-full object-cover transition-transform duration-500 ease-out  group-hover:scale-105"
+                        src="./assets/images/single-slide-3.png" alt="img project">
+                    <div class="absolute inset-0 flex items-center justify-center
+                                    bg-black/45 opacity-0
+                                    transition-opacity duration-300
+                                    group-hover:opacity-100">
+                        <div class="translate-y-4 text-center text-white
+                                            transition-transform duration-300
+                                            group-hover:translate-y-0">
+
+                            <div
+                                class=" text-center text-white text-title-l leading-[normal] gap-1.5 flex items-center justify-center">
+
+                                <span class="text-[12px]">Zoom in</span>
+                                <svg class="animate-arrow-move" width="14" height="11.38" viewBox="0 0 33 27"
+                                    fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M30.6438 12.2637L30.6438 13.8765L-1.40998e-07 13.8765L0 12.2637L30.6438 12.2637Z"
+                                        fill="currentColor" />
+                                    <path
+                                        d="M32.2782 13.1151L19.1631 26.2302L18.0226 25.0898L29.9973 13.1151L18.0226 1.14044L19.1631 0L32.2782 13.1151Z"
+                                        fill="currentColor" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div
+                    class="group relative overflow-hidden cursor-pointer project-image lg:min-w-[270px] lg:h-[180px] lg:w-[270px]  sm:h-[29.75vw] h-[66.666vw]">
+                    <img class="h-full  w-full object-cover transition-transform duration-500 ease-out  group-hover:scale-105"
+                        src="./assets/images/single-post-2.jpg" alt="img project">
+                    <div class="absolute inset-0 flex items-center justify-center
+                                    bg-black/45 opacity-0
+                                    transition-opacity duration-300
+                                    group-hover:opacity-100">
+                        <div class="translate-y-4 text-center text-white
+                                            transition-transform duration-300
+                                            group-hover:translate-y-0">
+
+                            <div
+                                class=" text-center text-white text-title-l leading-[normal] gap-1.5 flex items-center justify-center">
+
+                                <span class="text-[12px]">Zoom in</span>
+                                <svg class="animate-arrow-move" width="14" height="11.38" viewBox="0 0 33 27"
+                                    fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M30.6438 12.2637L30.6438 13.8765L-1.40998e-07 13.8765L0 12.2637L30.6438 12.2637Z"
+                                        fill="currentColor" />
+                                    <path
+                                        d="M32.2782 13.1151L19.1631 26.2302L18.0226 25.0898L29.9973 13.1151L18.0226 1.14044L19.1631 0L32.2782 13.1151Z"
+                                        fill="currentColor" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div
+                    class="group relative overflow-hidden cursor-pointer project-image lg:min-w-[270px] lg:h-[180px] lg:w-[270px]  sm:h-[29.75vw] h-[66.666vw]">
+                    <img class="h-full  w-full object-cover transition-transform duration-500 ease-out  group-hover:scale-105"
+                        src="./assets/images/single-post-1.png" alt="img project">
+                    <div class="absolute inset-0 flex items-center justify-center
+                                    bg-black/45 opacity-0
+                                    transition-opacity duration-300
+                                    group-hover:opacity-100">
+                        <div class="translate-y-4 text-center text-white
+                                            transition-transform duration-300
+                                            group-hover:translate-y-0">
+
+                            <div
+                                class=" text-center text-white text-title-l leading-[normal] gap-1.5 flex items-center justify-center">
+
+                                <span class="text-[12px]">Zoom in</span>
+                                <svg class="animate-arrow-move" width="14" height="11.38" viewBox="0 0 33 27"
+                                    fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M30.6438 12.2637L30.6438 13.8765L-1.40998e-07 13.8765L0 12.2637L30.6438 12.2637Z"
+                                        fill="currentColor" />
+                                    <path
+                                        d="M32.2782 13.1151L19.1631 26.2302L18.0226 25.0898L29.9973 13.1151L18.0226 1.14044L19.1631 0L32.2782 13.1151Z"
+                                        fill="currentColor" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div
+                    class="group relative overflow-hidden cursor-pointer project-image lg:min-w-[270px] lg:h-[180px] lg:w-[270px]  sm:h-[29.75vw] h-[66.666vw]">
+                    <img class="h-full  w-full object-cover transition-transform duration-500 ease-out  group-hover:scale-105"
+                        src="./assets/images/single-slide-6.png" alt="img project">
+                    <div class="absolute inset-0 flex items-center justify-center
+                                    bg-black/45 opacity-0
+                                    transition-opacity duration-300
+                                    group-hover:opacity-100">
+                        <div class="translate-y-4 text-center text-white
+                                            transition-transform duration-300
+                                            group-hover:translate-y-0">
+
+                            <div
+                                class=" text-center text-white text-title-l leading-[normal] gap-1.5 flex items-center justify-center">
+
+                                <span class="text-[12px]">Zoom in</span>
+                                <svg class="animate-arrow-move" width="14" height="11.38" viewBox="0 0 33 27"
+                                    fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M30.6438 12.2637L30.6438 13.8765L-1.40998e-07 13.8765L0 12.2637L30.6438 12.2637Z"
+                                        fill="currentColor" />
+                                    <path
+                                        d="M32.2782 13.1151L19.1631 26.2302L18.0226 25.0898L29.9973 13.1151L18.0226 1.14044L19.1631 0L32.2782 13.1151Z"
+                                        fill="currentColor" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div
+                    class="group relative overflow-hidden cursor-pointer project-image lg:min-w-[270px] lg:h-[180px] lg:w-[270px]  sm:h-[29.75vw] h-[66.666vw]">
+                    <img class="h-full  w-full object-cover transition-transform duration-500 ease-out  group-hover:scale-105"
+                        src="./assets/images/single-slide-7.png" alt="img project">
+                    <div class="absolute inset-0 flex items-center justify-center
+                                    bg-black/45 opacity-0
+                                    transition-opacity duration-300
+                                    group-hover:opacity-100">
+                        <div class="translate-y-4 text-center text-white
+                                            transition-transform duration-300
+                                            group-hover:translate-y-0">
+
+                            <div
+                                class=" text-center text-white text-title-l leading-[normal] gap-1.5 flex items-center justify-center">
+
+                                <span class="text-[12px]">Zoom in</span>
+                                <svg class="animate-arrow-move" width="14" height="11.38" viewBox="0 0 33 27"
+                                    fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M30.6438 12.2637L30.6438 13.8765L-1.40998e-07 13.8765L0 12.2637L30.6438 12.2637Z"
+                                        fill="currentColor" />
+                                    <path
+                                        d="M32.2782 13.1151L19.1631 26.2302L18.0226 25.0898L29.9973 13.1151L18.0226 1.14044L19.1631 0L32.2782 13.1151Z"
+                                        fill="currentColor" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+        <section class="pb-section-y-l px-page-x">
+            <div class="grid grid-cols-1 lg:grid-cols-[minmax(0,5216fr)_minmax(0,7824fr)] gap-xl">
+                <div class="flex flex-col justify-between lg:h-[415px] items-start gap-[30px]">
+                    <h2 class="text-h1 tracking-[-0.01em] leading-[1]">
+                        Related <br>
+                        Article
+                    </h2>
+                    <div class="flex flex-col gap-4">
+                        <p class="text-p1 leading-[normal] font-medium">3J融合创新空间, 澳門 / 蔡田田建筑师事务所 + 一间建筑 A( )VOID</p>
+                        <p class="text-[18px] tracking-[-0.02em] leading-[1.2] font-light line-clamp-4">
+                            本项目以「保留空间可能性」为核心概念，致力于创造具有高度适应性的留白场域。家具、装置和设备均被整合于墙体内、地板下及天花上，确保室内空间可随时恢复完全开放状态。</p>
+                    </div>
+                    <a href="#"
+                        class="btn-toggle btn shrink-0 py-1.5 px-3 lg:py-2.5 lg:px-5 text-[14px] lg:text-title-l font-medium leading-[normal] btn-default ">
+                        Read more
+                    </a>
+                </div>
+                <div>
+                    <img class="w-full object-cover h-[59.556vw] sm:h-[60.833vw] lg:h-[30.563vw]"
+                        src="./assets/images/project-1.png" alt="img project">
+                </div>
+
+            </div>
+        </section>
+    </main>
+    <footer class="footer-site px-page-x border-t border-grey pt-[15px] pb-4 md:pt-5.5 md:pb-[23px]">
+        <div class="flex flex-col md:flex-row flex-wrap justify-between items-center gap-2.5">
+            <div class="flex-1">
+                <p class="text-p1 leading-[normal] text-center md:text-left">© 2026 Joy Choi Arquitectos Atelier Lda.
+                    <span class="block md:inline-block">All rights reserved.</span>
+                </p>
+            </div>
+            <div class="flex gap-4">
+                <a href="#" target="_blank">
+                    <img class="w-auto max-h-[24px] object-contain" src="assets/images/instagram-icon.svg" alt="">
+                </a>
+                <a href="#" target="_blank">
+                    <img class="w-auto max-h-[24px] object-contain" src="assets/images/facebook-icon.svg" alt="">
+                </a>
+                <a href="#" target="_blank">
+                    <img class="w-auto max-h-[24px] object-contain" src="assets/images/wechat-icon.svg" alt="">
+                </a>
+            </div>
+        </div>
+    </footer>
+    <div id="image-modal"
+        class="fixed inset-0 z-[9999] flex items-center justify-center bg-black/80 p-5 opacity-0 invisible transition-all duration-300">
+        <button id="image-modal-close"
+            class="absolute right-5 top-5 z-10 flex h-10 w-10 items-center justify-center text-3xl text-white">
+            ×
+        </button>
+
+        <img id="image-modal-img"
+            class="max-h-[90vh] max-w-[95vw] scale-95 object-contain transition-transform duration-300" src="" alt="">
+    </div>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+    <script src="assets/js/custom.js"></script>
+</body>
+
+</html>
