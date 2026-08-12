@@ -1,6 +1,6 @@
 // Remove this code in sage theme
-import { gsap } from "../../node_modules/gsap/index.js";
-import Cookies from "../../node_modules/js-cookie/dist/js.cookie.mjs";
+import { gsap } from "https://cdn.jsdelivr.net/npm/gsap@3.10.4/index.js";
+import Cookies from "https://cdnjs.cloudflare.com/ajax/libs/js-cookie/3.0.8/js.cookie.mjs";
 
 // Use this code in sage
 // import { gsap } from "gsap";
