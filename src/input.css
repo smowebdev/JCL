@@ -89,7 +89,7 @@
 
 
     .btn {
-        @apply inline-block px-[19px] py-[9.5px] text-title-l leading-[normal] border;
+        @apply inline-block px-[19px] py-[9.5px] text-title-l leading-[normal] border transition-all duration-300 ease-[ease];
 
     }
 

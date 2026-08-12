@@ -1723,6 +1723,13 @@
     font-size: var(--text-title-l);
     --tw-leading: normal;
     line-height: normal;
+    transition-property: all;
+    transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
+    transition-duration: var(--tw-duration, var(--default-transition-duration));
+    --tw-duration: 300ms;
+    transition-duration: 300ms;
+    --tw-ease: ease;
+    transition-timing-function: ease;
   }
   .btn-primary {
     border-color: var(--color-white);

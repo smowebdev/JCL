@@ -465,8 +465,16 @@ jQuery(document).ready(function ($) {
   const $formPopup = $("[data-form-popup]");
   const $formContent = $(".form-content");
 
-  $(".js-form-trigger").on("click", function () {
-    const formType = $(this).data("form-type");
+  $(".js-form-trigger").on("click", function (e) {
+    e.preventDefault();
+
+    const href = $(this).attr("href");
+
+    if (!href || href === "#") {
+      return;
+    }
+
+    const formType = href.replace(/^#/, "");
 
     $formContent.addClass("hidden");
 
@@ -563,5 +571,4 @@ jQuery(document).ready(function ($) {
     .openPopup();
 
   // Map - End
-
 });
