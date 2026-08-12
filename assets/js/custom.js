@@ -205,7 +205,7 @@ jQuery(document).ready(function ($) {
       if (isFirstHero) {
         $homeHeroInner.css(
           "cursor",
-          'url("/assets/images/arrow-hero-down.svg") 12 12, auto',
+          'url("assets/images/arrow-hero-down.svg") 12 12, auto',
         );
 
         return;
@@ -214,7 +214,7 @@ jQuery(document).ready(function ($) {
       if (isLastHero) {
         $homeHeroInner.css(
           "cursor",
-          'url("/assets/images/arrow-hero.svg") 12 12, auto',
+          'url("assets/images/arrow-hero.svg") 12 12, auto',
         );
 
         return;
@@ -223,12 +223,12 @@ jQuery(document).ready(function ($) {
       if (mouseY < rect.height / 2) {
         $homeHeroInner.css(
           "cursor",
-          'url("/assets/images/arrow-hero.svg") 12 12, auto',
+          'url("assets/images/arrow-hero.svg") 12 12, auto',
         );
       } else {
         $homeHeroInner.css(
           "cursor",
-          'url("/assets/images/arrow-hero-down.svg") 12 12, auto',
+          'url("assets/images/arrow-hero-down.svg") 12 12, auto',
         );
       }
     });
