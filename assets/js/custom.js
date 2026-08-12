@@ -563,4 +563,5 @@ jQuery(document).ready(function ($) {
     .openPopup();
 
   // Map - End
+
 });

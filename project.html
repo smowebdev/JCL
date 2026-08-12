@@ -18,16 +18,16 @@
             </a>
             <nav class="header-menu hidden md:block text-[16px] leading-4.75  md:mr-17.5 lg:mr-25">
                 <ul class="flex gap-5 lg:gap-l">
-                    <li><a href="#">Project</a></li>
-                    <li><a href="#">People</a></li>
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Story</a></li>
+                    <li><a href="project.html">Project</a></li>
+                    <li><a href="people.html">People</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="idea.html">Idea</a></li>
                 </ul>
             </nav>
-            <div class="header-lang hidden md:flex text-[16px]  leading-4.75  gap-4">
-                <a href="#" class="text-grey">简</a>
-                <a href="#" class="text-grey">繁</a>
-                <a href="#" class="text-primary">EN</a>
+            <div class="header-lang text-grey hidden md:flex text-[16px]  leading-4.75  gap-4">
+                <a href="#">简</a>
+                <a href="#">繁</a>
+                <a href="#" class="active">EN</a>
             </div>
             <div class="menu-toggle block md:hidden">
                 <span></span>
@@ -43,10 +43,10 @@
             </div>
             <nav class="flex-1 flex items-center text-center text-[30px] leading-9 justify-center">
                 <ul class="flex flex-col gap-l">
-                    <li><a href="#">Project</a></li>
-                    <li><a href="#">People</a></li>
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Story</a></li>
+                    <li><a href="project.html">Project</a></li>
+                    <li><a href="people.html">People</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="idea.html">Idea</a></li>
                 </ul>
             </nav>
             <div class="header-socials py-l flex justify-center gap-6">
@@ -56,9 +56,19 @@
                 <a href="#" target="_blank">
                     <img class="w-6 h-6 object-contain" src="assets/images/facebook-icon.svg" alt="">
                 </a>
-                <a href="#" target="_blank">
-                    <img class="w-6 h-6 object-contain" src="assets/images/wechat-icon.svg" alt="">
-                </a>
+                <div class="relative group js-wechat cursor-pointer">
+                    <button type="button" class="cursor-pointer js-wechat-trigger">
+                        <img class="w-6 h-6 object-contain" src="assets/images/wechat-icon.svg" alt="WeChat">
+                    </button>
+
+                    <div class="absolute left-1/2 bottom-full z-50 pb-2
+               hidden -translate-x-1/2
+               md:group-hover:block
+               js-wechat-qr">
+                        <img class="w-24 h-24 max-w-[unset] object-contain bg-white p-2 shadow-lg"
+                            src="assets/images/qr-img.png" alt="WeChat QR Code">
+                    </div>
+                </div>
             </div>
         </div>
     </header>
@@ -66,32 +76,33 @@
         <section class="pb-section-y-l">
             <div class="py-section-y-s px-page-x flex gap-2 lg:gap-s justify-center flex-wrap group">
                 <a href="#"
-                    class="btn-toggle btn shrink-0 py-1.5 px-3 lg:py-2.5 lg:px-5 text-[14px] lg:text-title-l font-medium leading-[normal] btn-primary ">
+                    class="btn-toggle btn shrink-0 py-1.5 px-3 lg:py-2.5 lg:px-5 text-[14px] lg:text-title-l font-medium leading-[normal] btn-default ">
                     Architecture
                 </a>
                 <a href="#"
-                    class="btn-toggle btn shrink-0 py-1.5 px-3 lg:py-2.5 lg:px-5 text-[14px] lg:text-title-l font-medium leading-[normal] btn-primary ">
+                    class="btn-toggle btn shrink-0 py-1.5 px-3 lg:py-2.5 lg:px-5 text-[14px] lg:text-title-l font-medium leading-[normal] btn-default ">
                     Urban Study
                 </a>
                 <a href="#"
-                    class="btn-toggle btn shrink-0 py-1.5 px-3 lg:py-2.5 lg:px-5 text-[14px] lg:text-title-l font-medium leading-[normal] btn-primary ">
+                    class="btn-toggle btn shrink-0 py-1.5 px-3 lg:py-2.5 lg:px-5 text-[14px] lg:text-title-l font-medium leading-[normal] btn-default ">
                     Landscape
                 </a>
                 <a href="#"
-                    class="btn-toggle btn shrink-0 py-1.5 px-3 lg:py-2.5 lg:px-5 text-[14px] lg:text-title-l font-medium leading-[normal] btn-primary ">
+                    class="btn-toggle btn shrink-0 py-1.5 px-3 lg:py-2.5 lg:px-5 text-[14px] lg:text-title-l font-medium leading-[normal] btn-default ">
                     Heritage
                 </a>
                 <a href="#"
-                    class="btn-toggle btn shrink-0 py-1.5 px-3 lg:py-2.5 lg:px-5 text-[14px] lg:text-title-l font-medium leading-[normal] btn-primary ">
+                    class="btn-toggle btn shrink-0 py-1.5 px-3 lg:py-2.5 lg:px-5 text-[14px] lg:text-title-l font-medium leading-[normal] btn-default ">
                     Interior
                 </a>
                 <a href="#"
-                    class="btn-toggle btn shrink-0 py-1.5 px-3 lg:py-2.5 lg:px-5 text-[14px] lg:text-title-l font-medium leading-[normal] btn-primary ">
+                    class="btn-toggle btn shrink-0 py-1.5 px-3 lg:py-2.5 lg:px-5 text-[14px] lg:text-title-l font-medium leading-[normal] btn-default ">
                     Green
                 </a>
             </div>
-            <div class="border-t-2 border-primary/10"></div>
-            <div class="grid grid-cols-1 md:grid-cols-[77fr_250fr] lg:grid-cols-[8fr_25fr] gap-9 md:gap-5 px-page-x pt-5 md:pt-0">
+            <div class="border-t-2 border-primary/10 md:hidden"></div>
+            <div
+                class="grid grid-cols-1 md:grid-cols-[77fr_250fr] lg:grid-cols-[8fr_25fr] gap-9 md:gap-5 px-page-x pt-5 md:pt-0">
                 <div class=" flex flex-col gap-2 md:gap-12 ">
                     <div class="flex flex-col gap-3 md:gap-5 sector-item">
                         <div class="sector-toggle flex cursor-pointer items-center md:cursor-default gap-2.5">
@@ -120,7 +131,7 @@
                             ">
                                 <div data-tab="tab1" class="group flex cursor-pointer items-start gap-2.5 active ">
                                     <div
-                                        class="relative h-3 w-3 mt-[3px] border group-hover:border-none group-hover:bg-grey shrink-0 group-[.active]:bg-tertiary group-[.active]:border-none transition-colors duration-300">
+                                        class="relative h-3 w-3 mt-[3px] border group-hover:border-none group-hover:!bg-grey shrink-0 group-[.active]:bg-tertiary group-[.active]:border-none transition-colors duration-300">
                                         <span
                                             class="absolute left-0 top-1/2 h-px w-3 -translate-y-1/2 bg-tertiary opacity-0 transition-opacity group-hover:opacity-100"></span>
 
@@ -128,13 +139,14 @@
                                             class="absolute left-1/2 top-0 h-3 w-px -translate-x-1/2 bg-tertiary opacity-0 transition-opacity group-hover:opacity-100"></span>
                                     </div>
 
-                                    <p class="text-[14px] transition-colors leading-[normal] duration-300 group-[.active]:text-tertiary">
+                                    <p
+                                        class="text-[14px] transition-colors leading-[normal] duration-300 group-[.active]:text-tertiary group-hover:!text-primary">
                                         Feasibility Study for Lands & Buildings
                                     </p>
                                 </div>
                                 <div data-tab="tab2" class="group flex cursor-pointer items-start gap-2.5 ">
                                     <div
-                                        class="relative h-3 w-3 mt-[3px] border group-hover:border-none group-hover:bg-grey shrink-0 group-[.active]:bg-tertiary group-[.active]:border-none transition-colors duration-300">
+                                        class="relative h-3 w-3 mt-[3px] border group-hover:border-none group-hover:!bg-grey shrink-0 group-[.active]:bg-tertiary group-[.active]:border-none transition-colors duration-300">
                                         <span
                                             class="absolute left-0 top-1/2 h-px w-3 -translate-y-1/2 bg-tertiary opacity-0 transition-opacity group-hover:opacity-100"></span>
 
@@ -142,13 +154,14 @@
                                             class="absolute left-1/2 top-0 h-3 w-px -translate-x-1/2 bg-tertiary opacity-0 transition-opacity group-hover:opacity-100"></span>
                                     </div>
 
-                                    <p class="text-[14px] transition-colors leading-[normal] duration-300 group-[.active]:text-tertiary">
+                                    <p
+                                        class="text-[14px] transition-colors leading-[normal] duration-300 group-[.active]:text-tertiary group-hover:!text-primary">
                                         Local Macau Statutory Submission & Technical Support
                                     </p>
                                 </div>
                                 <div data-tab="tab3" class="group flex cursor-pointer items-start gap-2.5 ">
                                     <div
-                                        class="relative h-3 w-3 mt-[3px] border group-hover:border-none group-hover:bg-grey shrink-0 group-[.active]:bg-tertiary group-[.active]:border-none transition-colors duration-300">
+                                        class="relative h-3 w-3 mt-[3px] border group-hover:border-none group-hover:!bg-grey shrink-0 group-[.active]:bg-tertiary group-[.active]:border-none transition-colors duration-300">
                                         <span
                                             class="absolute left-0 top-1/2 h-px w-3 -translate-y-1/2 bg-tertiary opacity-0 transition-opacity group-hover:opacity-100"></span>
 
@@ -156,13 +169,14 @@
                                             class="absolute left-1/2 top-0 h-3 w-px -translate-x-1/2 bg-tertiary opacity-0 transition-opacity group-hover:opacity-100"></span>
                                     </div>
 
-                                    <p class="text-[14px] transition-colors leading-[normal] duration-300 group-[.active]:text-tertiary">
+                                    <p
+                                        class="text-[14px] transition-colors leading-[normal] duration-300 group-[.active]:text-tertiary group-hover:!text-primary">
                                         Historical Operation Advisory
                                     </p>
                                 </div>
                                 <div data-tab="tab4" class="group flex cursor-pointer items-start gap-2.5 ">
                                     <div
-                                        class="relative h-3 w-3 mt-[3px] border group-hover:border-none group-hover:bg-grey shrink-0 group-[.active]:bg-tertiary group-[.active]:border-none transition-colors duration-300">
+                                        class="relative h-3 w-3 mt-[3px] border group-hover:border-none group-hover:!bg-grey shrink-0 group-[.active]:bg-tertiary group-[.active]:border-none transition-colors duration-300">
                                         <span
                                             class="absolute left-0 top-1/2 h-px w-3 -translate-y-1/2 bg-tertiary opacity-0 transition-opacity group-hover:opacity-100"></span>
 
@@ -170,13 +184,14 @@
                                             class="absolute left-1/2 top-0 h-3 w-px -translate-x-1/2 bg-tertiary opacity-0 transition-opacity group-hover:opacity-100"></span>
                                     </div>
 
-                                    <p class="text-[14px] transition-colors leading-[normal] duration-300 group-[.active]:text-tertiary">
+                                    <p
+                                        class="text-[14px] transition-colors leading-[normal] duration-300 group-[.active]:text-tertiary group-hover:!text-primary">
                                         Business Ad
                                     </p>
                                 </div>
                                 <div data-tab="tab5" class="group flex cursor-pointer items-start gap-2.5 ">
                                     <div
-                                        class="relative h-3 w-3 mt-[3px] border group-hover:border-none group-hover:bg-grey shrink-0 group-[.active]:bg-tertiary group-[.active]:border-none transition-colors duration-300">
+                                        class="relative h-3 w-3 mt-[3px] border group-hover:border-none group-hover:!bg-grey shrink-0 group-[.active]:bg-tertiary group-[.active]:border-none transition-colors duration-300">
                                         <span
                                             class="absolute left-0 top-1/2 h-px w-3 -translate-y-1/2 bg-tertiary opacity-0 transition-opacity group-hover:opacity-100"></span>
 
@@ -184,13 +199,14 @@
                                             class="absolute left-1/2 top-0 h-3 w-px -translate-x-1/2 bg-tertiary opacity-0 transition-opacity group-hover:opacity-100"></span>
                                     </div>
 
-                                    <p class="text-[14px] transition-colors leading-[normal] duration-300 group-[.active]:text-tertiary">
+                                    <p
+                                        class="text-[14px] transition-colors leading-[normal] duration-300 group-[.active]:text-tertiary group-hover:!text-primary">
                                         Signage & Way-Finding Consultancy
                                     </p>
                                 </div>
                                 <div data-tab="tab6" class="group flex cursor-pointer items-start gap-2.5 ">
                                     <div
-                                        class="relative h-3 w-3 mt-[3px] border group-hover:border-none group-hover:bg-grey shrink-0 group-[.active]:bg-tertiary group-[.active]:border-none transition-colors duration-300">
+                                        class="relative h-3 w-3 mt-[3px] border group-hover:border-none group-hover:!bg-grey shrink-0 group-[.active]:bg-tertiary group-[.active]:border-none transition-colors duration-300">
                                         <span
                                             class="absolute left-0 top-1/2 h-px w-3 -translate-y-1/2 bg-tertiary opacity-0 transition-opacity group-hover:opacity-100"></span>
 
@@ -198,13 +214,14 @@
                                             class="absolute left-1/2 top-0 h-3 w-px -translate-x-1/2 bg-tertiary opacity-0 transition-opacity group-hover:opacity-100"></span>
                                     </div>
 
-                                    <p class="text-[14px] transition-colors leading-[normal] duration-300 group-[.active]:text-tertiary">
+                                    <p
+                                        class="text-[14px] transition-colors leading-[normal] duration-300 group-[.active]:text-tertiary group-hover:!text-primary">
                                         Design & Built Consultancy
                                     </p>
                                 </div>
                                 <div data-tab="tab7" class="group flex cursor-pointer items-start gap-2.5 ">
                                     <div
-                                        class="relative h-3 w-3 mt-[3px] border group-hover:border-none group-hover:bg-grey shrink-0 group-[.active]:bg-tertiary group-[.active]:border-none transition-colors duration-300">
+                                        class="relative h-3 w-3 mt-[3px] border group-hover:border-none group-hover:!bg-grey shrink-0 group-[.active]:bg-tertiary group-[.active]:border-none transition-colors duration-300">
                                         <span
                                             class="absolute left-0 top-1/2 h-px w-3 -translate-y-1/2 bg-tertiary opacity-0 transition-opacity group-hover:opacity-100"></span>
 
@@ -212,7 +229,8 @@
                                             class="absolute left-1/2 top-0 h-3 w-px -translate-x-1/2 bg-tertiary opacity-0 transition-opacity group-hover:opacity-100"></span>
                                     </div>
 
-                                    <p class="text-[14px] transition-colors leading-[normal] duration-300 group-[.active]:text-tertiary">
+                                    <p
+                                        class="text-[14px] transition-colors leading-[normal] duration-300 group-[.active]:text-tertiary group-hover:!text-primary">
                                         Project Admin / Management
                                     </p>
                                 </div>
@@ -248,7 +266,7 @@
                             ">
                                 <div data-tab="tab8" class="group flex cursor-pointer items-start gap-2.5 active ">
                                     <div
-                                        class="relative h-3 w-3 mt-[3px] border group-hover:border-none group-hover:bg-grey shrink-0 group-[.active]:bg-tertiary group-[.active]:border-none transition-colors duration-300">
+                                        class="relative h-3 w-3 mt-[3px] border group-hover:border-none group-hover:!bg-grey shrink-0 group-[.active]:bg-tertiary group-[.active]:border-none transition-colors duration-300">
                                         <span
                                             class="absolute left-0 top-1/2 h-px w-3 -translate-y-1/2 bg-tertiary opacity-0 transition-opacity group-hover:opacity-100"></span>
 
@@ -256,13 +274,14 @@
                                             class="absolute left-1/2 top-0 h-3 w-px -translate-x-1/2 bg-tertiary opacity-0 transition-opacity group-hover:opacity-100"></span>
                                     </div>
 
-                                    <p class="text-[14px] transition-colors leading-[normal] duration-300 group-[.active]:text-tertiary">
+                                    <p
+                                        class="text-[14px] transition-colors leading-[normal] duration-300 group-[.active]:text-tertiary group-hover:!text-primary">
                                         Education
                                     </p>
                                 </div>
                                 <div data-tab="tab9" class="group flex cursor-pointer items-start gap-2.5 ">
                                     <div
-                                        class="relative h-3 w-3 mt-[3px] border group-hover:border-none group-hover:bg-grey shrink-0 group-[.active]:bg-tertiary group-[.active]:border-none transition-colors duration-300">
+                                        class="relative h-3 w-3 mt-[3px] border group-hover:border-none group-hover:!bg-grey shrink-0 group-[.active]:bg-tertiary group-[.active]:border-none transition-colors duration-300">
                                         <span
                                             class="absolute left-0 top-1/2 h-px w-3 -translate-y-1/2 bg-tertiary opacity-0 transition-opacity group-hover:opacity-100"></span>
 
@@ -270,13 +289,14 @@
                                             class="absolute left-1/2 top-0 h-3 w-px -translate-x-1/2 bg-tertiary opacity-0 transition-opacity group-hover:opacity-100"></span>
                                     </div>
 
-                                    <p class="text-[14px] transition-colors leading-[normal] duration-300 group-[.active]:text-tertiary">
+                                    <p
+                                        class="text-[14px] transition-colors leading-[normal] duration-300 group-[.active]:text-tertiary group-hover:!text-primary">
                                         Commercial
                                     </p>
                                 </div>
                                 <div data-tab="tab10" class="group flex cursor-pointer items-start gap-2.5 ">
                                     <div
-                                        class="relative h-3 w-3 mt-[3px] border group-hover:border-none group-hover:bg-grey shrink-0 group-[.active]:bg-tertiary group-[.active]:border-none transition-colors duration-300">
+                                        class="relative h-3 w-3 mt-[3px] border group-hover:border-none group-hover:!bg-grey shrink-0 group-[.active]:bg-tertiary group-[.active]:border-none transition-colors duration-300">
                                         <span
                                             class="absolute left-0 top-1/2 h-px w-3 -translate-y-1/2 bg-tertiary opacity-0 transition-opacity group-hover:opacity-100"></span>
 
@@ -284,13 +304,14 @@
                                             class="absolute left-1/2 top-0 h-3 w-px -translate-x-1/2 bg-tertiary opacity-0 transition-opacity group-hover:opacity-100"></span>
                                     </div>
 
-                                    <p class="text-[14px] transition-colors leading-[normal] duration-300 group-[.active]:text-tertiary">
+                                    <p
+                                        class="text-[14px] transition-colors leading-[normal] duration-300 group-[.active]:text-tertiary group-hover:!text-primary">
                                         Residential
                                     </p>
                                 </div>
                                 <div data-tab="tab11" class="group flex cursor-pointer items-start gap-2.5 ">
                                     <div
-                                        class="relative h-3 w-3 mt-[3px] border group-hover:border-none group-hover:bg-grey shrink-0 group-[.active]:bg-tertiary group-[.active]:border-none transition-colors duration-300">
+                                        class="relative h-3 w-3 mt-[3px] border group-hover:border-none group-hover:!bg-grey shrink-0 group-[.active]:bg-tertiary group-[.active]:border-none transition-colors duration-300">
                                         <span
                                             class="absolute left-0 top-1/2 h-px w-3 -translate-y-1/2 bg-tertiary opacity-0 transition-opacity group-hover:opacity-100"></span>
 
@@ -298,7 +319,8 @@
                                             class="absolute left-1/2 top-0 h-3 w-px -translate-x-1/2 bg-tertiary opacity-0 transition-opacity group-hover:opacity-100"></span>
                                     </div>
 
-                                    <p class="text-[14px] transition-colors leading-[normal] duration-300 group-[.active]:text-tertiary">
+                                    <p
+                                        class="text-[14px] transition-colors leading-[normal] duration-300 group-[.active]:text-tertiary group-hover:!text-primary">
                                         Public
                                     </p>
                                 </div>
@@ -307,11 +329,11 @@
                     </div>
                 </div>
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-y-[30px]">
-                                    
+
                     <div class="flex flex-col gap-2.5 ">
                         <div class="group relative overflow-hidden">
                             <a href="#">
-                                <img class="h-[188.44px] md:h-[147px] lg:h-[180px] w-full object-cover"
+                                <img class="min-[1441px]:!h-[12.5vw] h-[188.44px] md:h-[147px] lg:h-[180px] w-full object-cover"
                                     src="./assets/images/project-1.png" alt="img project">
                                 <div class="absolute inset-0 flex items-center justify-center
                                     bg-black/45 opacity-0
@@ -347,7 +369,7 @@
                     <div class="flex flex-col gap-2.5 ">
                         <div class="group relative overflow-hidden">
                             <a href="#">
-                                <img class="h-[188.44px] md:h-[147px] lg:h-[180px] w-full object-cover"
+                                <img class="min-[1441px]:!h-[12.5vw] h-[188.44px] md:h-[147px] lg:h-[180px] w-full object-cover"
                                     src="./assets/images/project-2.png" alt="img project">
                                 <div class="absolute inset-0 flex items-center justify-center
                                     bg-black/45 opacity-0
@@ -383,7 +405,7 @@
                     <div class="flex flex-col gap-2.5 ">
                         <div class="group relative overflow-hidden">
                             <a href="#">
-                                <img class="h-[188.44px] md:h-[147px] lg:h-[180px] w-full object-cover"
+                                <img class="min-[1441px]:!h-[12.5vw] h-[188.44px] md:h-[147px] lg:h-[180px] w-full object-cover"
                                     src="./assets/images/project-3.png" alt="img project">
                                 <div class="absolute inset-0 flex items-center justify-center
                                     bg-black/45 opacity-0
@@ -419,7 +441,7 @@
                     <div class="flex flex-col gap-2.5 ">
                         <div class="group relative overflow-hidden">
                             <a href="#">
-                                <img class="h-[188.44px] md:h-[147px] lg:h-[180px] w-full object-cover"
+                                <img class="min-[1441px]:!h-[12.5vw] h-[188.44px] md:h-[147px] lg:h-[180px] w-full object-cover"
                                     src="./assets/images/project-4.png" alt="img project">
                                 <div class="absolute inset-0 flex items-center justify-center
                                     bg-black/45 opacity-0
@@ -455,7 +477,7 @@
                     <div class="flex flex-col gap-2.5 ">
                         <div class="group relative overflow-hidden">
                             <a href="#">
-                                <img class="h-[188.44px] md:h-[147px] lg:h-[180px] w-full object-cover"
+                                <img class="min-[1441px]:!h-[12.5vw] h-[188.44px] md:h-[147px] lg:h-[180px] w-full object-cover"
                                     src="./assets/images/project-5.png" alt="img project">
                                 <div class="absolute inset-0 flex items-center justify-center
                                     bg-black/45 opacity-0
@@ -491,7 +513,7 @@
                     <div class="flex flex-col gap-2.5 ">
                         <div class="group relative overflow-hidden">
                             <a href="#">
-                                <img class="h-[188.44px] md:h-[147px] lg:h-[180px] w-full object-cover"
+                                <img class="min-[1441px]:!h-[12.5vw] h-[188.44px] md:h-[147px] lg:h-[180px] w-full object-cover"
                                     src="./assets/images/project-6.png" alt="img project">
                                 <div class="absolute inset-0 flex items-center justify-center
                                     bg-black/45 opacity-0
@@ -527,7 +549,7 @@
                     <div class="flex flex-col gap-2.5 ">
                         <div class="group relative overflow-hidden">
                             <a href="#">
-                                <img class="h-[188.44px] md:h-[147px] lg:h-[180px] w-full object-cover"
+                                <img class="min-[1441px]:!h-[12.5vw] h-[188.44px] md:h-[147px] lg:h-[180px] w-full object-cover"
                                     src="./assets/images/project-7.png" alt="img project">
                                 <div class="absolute inset-0 flex items-center justify-center
                                     bg-black/45 opacity-0
@@ -560,10 +582,10 @@
                         <p class="text-title-m leading-[140%]">ICBC Macau</p>
 
                     </div>
-                   <div class="flex flex-col gap-2.5 ">
+                    <div class="flex flex-col gap-2.5 ">
                         <div class="group relative overflow-hidden">
                             <a href="#">
-                                <img class="h-[188.44px] md:h-[147px] lg:h-[180px] w-full object-cover"
+                                <img class="min-[1441px]:!h-[12.5vw] h-[188.44px] md:h-[147px] lg:h-[180px] w-full object-cover"
                                     src="./assets/images/project-8.png" alt="img project">
                                 <div class="absolute inset-0 flex items-center justify-center
                                     bg-black/45 opacity-0
@@ -596,10 +618,10 @@
                         <p class="text-title-m leading-[140%]">3J Generative Space</p>
 
                     </div>
-                      <div class="flex flex-col gap-2.5 ">
+                    <div class="flex flex-col gap-2.5 ">
                         <div class="group relative overflow-hidden">
                             <a href="#">
-                                <img class="h-[188.44px] md:h-[147px] lg:h-[180px] w-full object-cover"
+                                <img class="min-[1441px]:!h-[12.5vw] h-[188.44px] md:h-[147px] lg:h-[180px] w-full object-cover"
                                     src="./assets/images/project-9.png" alt="img project">
                                 <div class="absolute inset-0 flex items-center justify-center
                                     bg-black/45 opacity-0
@@ -632,10 +654,10 @@
                         <p class="text-title-m leading-[140%]">Rotunda de Carlos da Maia</p>
 
                     </div>
-                      <div class="flex flex-col gap-2.5 ">
+                    <div class="flex flex-col gap-2.5 ">
                         <div class="group relative overflow-hidden">
                             <a href="#">
-                                <img class="h-[188.44px] md:h-[147px] lg:h-[180px] w-full object-cover"
+                                <img class="min-[1441px]:!h-[12.5vw] h-[188.44px] md:h-[147px] lg:h-[180px] w-full object-cover"
                                     src="./assets/images/project-10.png" alt="img project">
                                 <div class="absolute inset-0 flex items-center justify-center
                                     bg-black/45 opacity-0
@@ -668,10 +690,10 @@
                         <p class="text-title-m leading-[140%]">Lote Q001H, Song Shu Wei</p>
 
                     </div>
-                      <div class="flex flex-col gap-2.5 ">
+                    <div class="flex flex-col gap-2.5 ">
                         <div class="group relative overflow-hidden">
                             <a href="#">
-                                <img class="h-[188.44px] md:h-[147px] lg:h-[180px] w-full object-cover"
+                                <img class="min-[1441px]:!h-[12.5vw] h-[188.44px] md:h-[147px] lg:h-[180px] w-full object-cover"
                                     src="./assets/images/project-11.png" alt="img project">
                                 <div class="absolute inset-0 flex items-center justify-center
                                     bg-black/45 opacity-0
@@ -704,10 +726,10 @@
                         <p class="text-title-m leading-[140%]">Mong Ha Villa</p>
 
                     </div>
-                      <div class="flex flex-col gap-2.5 ">
+                    <div class="flex flex-col gap-2.5 ">
                         <div class="group relative overflow-hidden">
                             <a href="#">
-                                <img class="h-[188.44px] md:h-[147px] lg:h-[180px] w-full object-cover"
+                                <img class="min-[1441px]:!h-[12.5vw] h-[188.44px] md:h-[147px] lg:h-[180px] w-full object-cover"
                                     src="./assets/images/project-1.png" alt="img project">
                                 <div class="absolute inset-0 flex items-center justify-center
                                     bg-black/45 opacity-0
