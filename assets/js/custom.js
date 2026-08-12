@@ -205,7 +205,7 @@ jQuery(document).ready(function ($) {
       if (isFirstHero) {
         $homeHeroInner.css(
           "cursor",
-          'url("/assets/images/arrow-hero-down.svg") 12 12, auto',
+          'url("assets/images/arrow-hero-down.svg") 12 12, auto',
         );
 
         return;
@@ -214,7 +214,7 @@ jQuery(document).ready(function ($) {
       if (isLastHero) {
         $homeHeroInner.css(
           "cursor",
-          'url("/assets/images/arrow-hero.svg") 12 12, auto',
+          'url("assets/images/arrow-hero.svg") 12 12, auto',
         );
 
         return;
@@ -223,12 +223,12 @@ jQuery(document).ready(function ($) {
       if (mouseY < rect.height / 2) {
         $homeHeroInner.css(
           "cursor",
-          'url("/assets/images/arrow-hero.svg") 12 12, auto',
+          'url("assets/images/arrow-hero.svg") 12 12, auto',
         );
       } else {
         $homeHeroInner.css(
           "cursor",
-          'url("/assets/images/arrow-hero-down.svg") 12 12, auto',
+          'url("assets/images/arrow-hero-down.svg") 12 12, auto',
         );
       }
     });
@@ -465,8 +465,16 @@ jQuery(document).ready(function ($) {
   const $formPopup = $("[data-form-popup]");
   const $formContent = $(".form-content");
 
-  $(".js-form-trigger").on("click", function () {
-    const formType = $(this).data("form-type");
+  $(".js-form-trigger").on("click", function (e) {
+    e.preventDefault();
+
+    const href = $(this).attr("href");
+
+    if (!href || href === "#") {
+      return;
+    }
+
+    const formType = href.replace(/^#/, "");
 
     $formContent.addClass("hidden");
 
@@ -563,5 +571,4 @@ jQuery(document).ready(function ($) {
     .openPopup();
 
   // Map - End
-
 });

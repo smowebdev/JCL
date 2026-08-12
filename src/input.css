@@ -6,6 +6,9 @@
     --color-secondary: #B7AE9B;
     --color-tertiary: #880015;
     --color-grey: #D9D9D9;
+    --color-grey-dark: #58595B;
+    --color-grey-text: #57585a;
+    --color-grey-light: #808285;
 
     /* Fonts */
     --font-inter: "Inter", sans-serif;
@@ -89,7 +92,7 @@
 
 
     .btn {
-        @apply inline-block px-[19px] py-[9.5px] text-title-l leading-[normal] border;
+        @apply inline-block px-[19px] py-[9.5px] text-title-l leading-[normal] border transition-all duration-300 ease-[ease];
 
     }
 
